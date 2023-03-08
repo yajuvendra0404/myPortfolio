@@ -1,0 +1,13 @@
+.connect {
+  position: fixed;
+  z-index: 10;
+  top: 35vh;
+  background-color: white;
+  border-radius: 0px 5px 5px 0px;
+  font-size: x-large;
+  padding:1%;
+  list-style-type: none;
+  li {
+    cursor: pointer;
+  }
+}

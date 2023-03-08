@@ -1,0 +1,74 @@
+$blue-color: rgb(102, 153, 204);
+$white-color: white;
+$red-color: rgb(220, 53, 69);
+
+@mixin navigation($position,$z-index,$mt) {
+  width: 100vw;
+  position: $position;
+  text-align: center;
+  z-index:$z-index;
+  margin-top: $mt;
+
+}
+@mixin navAnchorHover($bgColor, $textColor){
+  li{
+    &:hover{
+      a {
+        background-color: $bgColor;
+        color: $textColor;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+@mixin navAnchor ($textColor) {
+  a {
+    text-decoration: none;
+    color: $textColor;
+    font-weight: lighter;
+    padding: 1%;
+  }
+}
+ul{
+  color: $white-color;
+  display: inline;
+  padding: 1%;
+  li {
+    display: inline;
+  }
+
+}
+.nav-default {
+  @include navigation(absolute,10, 1%);
+  @include navAnchor($white-color);
+  @include navAnchorHover($white-color, $blue-color);
+}
+.nav-scroll {
+  @include navigation(fixed, 10, 0%);
+  @include navAnchor($blue-color);//100, 136, 234
+  @include navAnchorHover($blue-color, $white-color );
+  background-color: $white-color;
+  box-shadow: 0px 0px 10px lightgray;
+  font-weight: bold;
+    .custom-card {
+      position: fixed;
+      margin-left: 85vw;
+      z-index: 10;
+      background-color: $blue-color;
+      color: $white-color !important;
+      border: $white-color;
+      text-align: right;
+      border-radius: 4px;
+      p{
+        margin-bottom: 0;
+        font-weight: lighter !important;
+        font-size: smaller;
+      }
+      h4 {
+        margin-bottom: 0;
+        font-weight: lighter !important;
+      }
+    }
+}
+
+// https://www.youtube.com/watch?v=skOTEbGwncE&t=159s - video about delarative

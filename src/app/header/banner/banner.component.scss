@@ -1,0 +1,50 @@
+
+@mixin prallaxProp($paddingTop,$paddingBottom,$color,$marginTop) {
+  padding-top: $paddingTop;
+  padding-bottom: $paddingBottom;
+  color: $color;
+  margin-top: $marginTop;
+}
+.banner{
+  background-image:url("../../../assets/images/pexels-fox-desktop.jpg") ;
+  height: 100vh;
+  background-size: cover;
+}
+.layer {
+  background-image: radial-gradient(  rgba(161, 201, 254, 0.8) 1%,rgba(4, 110, 248, 0.8) 99%);
+  position: relative;
+  height: 100vh;
+}
+
+
+.parallax-1 {
+  @include prallaxProp(15%, 5%, white, 15%)
+}
+.parallax-2 {
+  @include prallaxProp(5%, 5%, white, 10%);
+  h1 {
+    font-size: calc(40px + (120 - 40) * ((100vw - 300px)/ (1600 - 300)));
+  }
+}
+
+@media only screen and (max-width: 1200px) { // For tablet
+
+  .banner {
+    background-image: url("../../../assets/images/pexels-fox-mobile.jpg") fixed no-repeat ;
+    background-size: cover;
+  }
+  .parallax-2 {
+    @include prallaxProp(5%, 5%, white, 5vh)
+  }
+}
+@media only screen and (max-width: 420px) { // for Mobile
+
+  .banner {
+    background-image: url("../../../assets/images/pexels-fox-mobile.jpg") fixed no-repeat ;
+    background-size: cover;
+  }
+  .parallax-2 {
+    @include prallaxProp(5%, 5%, white, 35vh)
+  }
+
+}
