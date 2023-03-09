@@ -1,4 +1,4 @@
-$blue-color: rgb(102, 153, 204);
+$blue-color: royalblue  ;
 $white-color: white;
 $red-color: rgb(220, 53, 69);
 
@@ -45,33 +45,40 @@ ul{
 }
 .nav-scroll {
   @include navigation(fixed, 10, 0%);
-  @include navAnchor($blue-color);//100, 136, 234
-  @include navAnchorHover($blue-color, $white-color );
-  background-color: $white-color;
-  box-shadow: 0px 0px 10px lightgray;
+  @include navAnchor($white-color);
+  @include navAnchorHover($white-color, $blue-color );
+  background-color: $blue-color;
   font-weight: bold;
-    .custom-card {
-      position: fixed;
-      margin-left: 85vw;
-      z-index: 10;
-      background-color: $blue-color;
-      color: $white-color !important;
-      border: $white-color;
-      text-align: right;
-      border-radius: 4px;
-      p{
-        margin-bottom: 0;
-        font-weight: lighter !important;
-        font-size: smaller;
-      }
-      h4 {
-        margin-bottom: 0;
-        font-weight: lighter !important;
-      }
-    }
+  box-shadow: 0px 0px 5px lightsteelblue inset;
 }
+.custom-card {
+  position: fixed;
+  margin-left: 85vw;
+  z-index: 10;
+  background-color: $blue-color;
+  color: $white-color !important;
+  border: $white-color;
+  text-align: right;
+  border-radius: 4px;
+  p{
+    margin-bottom: 0;
+    font-weight: lighter !important;
+    font-size: smaller;
+  }
+  h4 {
+    margin-bottom: 0;
+    font-weight: lighter !important;
+  }
+  box-shadow: 1px 1px 5px lightsteelblue inset
+}
+
 .hide-sticky-nav {
   display: none;
 }
 
+@media only screen and (max-width: 420px) { // for Mobile
+  .custom-card {
+    display: none;
+  }
+}
 // https://www.youtube.com/watch?v=skOTEbGwncE&t=159s - video about delarative
