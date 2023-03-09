@@ -1,4 +1,6 @@
-$blue-color: royalblue  ;
+$blue-color: rgba(4, 110, 248) ;
+// rgba(4, 110, 248, 0.8) 99%);
+//     posit
 $white-color: white;
 $red-color: rgb(220, 53, 69);
 
@@ -49,6 +51,7 @@ ul{
   @include navAnchorHover($white-color, $blue-color );
   background-color: $blue-color;
   font-weight: bold;
+  padding: 2%;
   box-shadow: 0px 0px 5px lightsteelblue inset;
 }
 .custom-card {
@@ -75,6 +78,7 @@ ul{
 .hide-sticky-nav {
   display: none;
 }
+
 
 @media only screen and (max-width: 420px) { // for Mobile
   .custom-card {
