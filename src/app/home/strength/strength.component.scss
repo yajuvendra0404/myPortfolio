@@ -1,8 +1,9 @@
 
 .strength {
+  font-size: calc(13px + (14 - 13) * ((100vw - 300px)/ (1300 - 300)));
+  // background-color: #374756 ;
 
-  background-color: #374756 ;
-  background-image: radial-gradient(  #4b6175 1%,#374756 99%);
+ //55 71 86
   div{
     height: 200px;
   }
@@ -10,4 +11,14 @@
     color: white;
     text-align: center;
   }
+
+}
+.parallax {
+  background:url("../../../assets/images/parallax-2.jpg") fixed no-repeat;
+  background-size: cover;
+}
+.inner-parallax {
+  padding-bottom:10%;
+  background-image: radial-gradient(  rgba(95, 99, 105, 0.5) 20%,rgba(4, 110, 248, 0.5) 80%);
+  position: relative;
 }

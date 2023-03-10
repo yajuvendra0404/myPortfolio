@@ -12,12 +12,14 @@ export class HomeService {
 
   constructor() {
     this.strength = [
-        new StrengthModel("Detail-Oriented","#a0b8fa","#6488ea","white","zoom-in","500"), //a0b8fa
+
         new StrengthModel("Patience","#ff8086","#ce2029","white", "zoom-in","1000"), //ff8086
         new StrengthModel("Discipline","#9485f2","#6a5acd","white", "zoom-in","1500"), //9485f2
+        new StrengthModel("Detail-Oriented","#a0b8fa","#046ef8","white","zoom-in","500"), //a0b8fa
         new StrengthModel("Persistent ","#9dfc9d","#32cd32","white", "zoom-in","2000"), //9dfc9d
         new StrengthModel("Observant","#fcd29a","#ffae42","white", "zoom-in","2500"), //fcd29a
     ]
+    // bgColorShadow, bgColor, textColor, animationMotion, animationDuration
     this.skills = [
       new SkillsModel(0,'Javascript', 95),
       new SkillsModel(1,'Typescript', 92),

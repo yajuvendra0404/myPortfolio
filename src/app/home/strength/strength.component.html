@@ -1,17 +1,21 @@
-<div class="row strength justify-content-center align-items-center min-vh-100 p-2">
-  <h1 class="mt-5 mb-5"><strong>MY STRENGTH.</strong></h1>
-  <div class="col-md-3 ms-3 me-3 mb-3 card d-flex justify-content-center align-items-center"
-    [attr.data-aos]="item.animationMotion"
-    [attr.data-aos-duration]="item.animationDuration"
-    *ngFor="let item of strengths"
-    [ngStyle]="{
-      'background': item.bgColor,
-      'opacity':'0.9',
-      'color': item.textColor,
-      'font-size':'1.25em',
-      'box-shadow': '-5px -5px 15px '+ item.bgColorShadow +' inset'
-    }"
-  >
-    <span>{{ item.strengthName }}</span>
+<div class="parallax">
+  <div class="inner-parallax">
+    <div class="row strength justify-content-center align-items-center p-3">
+
+      <h1 class="mt-5 mb-5">My Strength</h1>
+      <div class="col-md-2 ms-3 me-3 mb-3 card d-flex justify-content-center align-items-center"
+        [attr.data-aos]="item.animationMotion"
+        [attr.data-aos-duration]="item.animationDuration"
+        *ngFor="let item of strengths"
+        [ngStyle]="{
+          'background': item.bgColor,
+          'color': item.textColor,
+          'font-size':'1.25em',
+          'box-shadow': '-5px -5px 15px '+ item.bgColorShadow +' inset'
+        }"
+      >
+        <span>{{ item.strengthName }}</span>
+      </div>
+    </div>
   </div>
 </div>

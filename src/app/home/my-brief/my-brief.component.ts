@@ -11,7 +11,7 @@ export class MyBriefComponent implements OnInit {
     { class:"bi bi-calendar-event mt-2", info:"Date of birth - 04/04/1992" },
     { class:"bi bi-envelope-at mt-2", info:"Email - yajuvendra0404@gmail.com" },
     { class:"bi bi-telephone mt-2", info:"Phone - +1(437)9960910" },
-    { class:"bi bi-geo-alt mt-2", info:"Date of birth - Ontario (Canada)" },
+    { class:"bi bi-geo-alt mt-2", info:"Location - Ontario (Canada)" },
   ];
   expertise: any = [
     { class:"bi bi-globe mt-2", info:"" },

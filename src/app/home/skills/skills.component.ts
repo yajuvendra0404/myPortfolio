@@ -14,17 +14,21 @@ highcharts3D(Highcharts);
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.scss']
 })
+
 export class SkillsComponent implements OnInit {
+
   chartOptions: Highcharts.Options;
   optionsModel: number[] = [1, 2, 3, 4 ];
   myOptions: IMultiSelectOption[];
   highcharts: typeof Highcharts = Highcharts;
+
   mySettings: IMultiSelectSettings = {
     enableSearch: false,
     buttonClasses: 'btn btn-outline-secondary btn-block',
     dynamicTitleMaxItems: 1,
     displayAllSelectedText: true
-};
+  };
+
   intializeHighchart() {
      return {
       chart: {
@@ -85,8 +89,9 @@ export class SkillsComponent implements OnInit {
 
    };
   }
+
   filterData(params: string) {
-      let allSkillsName = this.homeSevice.getSkills().map(ele => ele[params as keyof ISkills]); // ['topic','topic']
+      let allSkillsName = this.homeSevice.getSkills().map(ele => ele[params as keyof ISkills]);
       let skillArr: any[] = [];
       this.optionsModel.forEach( (ele)=> {
           if(this.homeSevice.getSkills()[ele][params as keyof ISkills] === allSkillsName[ele]){
@@ -95,6 +100,7 @@ export class SkillsComponent implements OnInit {
       })
       return skillArr;
   }
+
   onChange(ev: Event) {
     this.chartOptions = {};
     this.chartOptions = this.intializeHighchart() as Highcharts.Options;
@@ -103,8 +109,8 @@ export class SkillsComponent implements OnInit {
   constructor( private homeSevice : HomeService ) {
     this.chartOptions = this.intializeHighchart() as Highcharts.Options;
     this.myOptions = <IMultiSelectOption[]> this.homeSevice.getSkills().map((ele) => pick(ele,['id','name']));
-
   }
+
   ngAfterViewInit() {
     document.getElementsByClassName('highcharts-credits')[0].remove();
   }
