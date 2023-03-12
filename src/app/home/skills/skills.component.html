@@ -28,15 +28,15 @@
 
       <div class="col-md-3" *ngFor="let item of allSkills">
           <div class="card mb-5 text-center" [ngStyle] = "{background:item.iconImage}">
-            <div [ngStyle]="{background:'rgba(255, 90, 25, 0.8)'}">
+            <div [ngStyle]="{background:item.bgColor, opacity:0.8}">
               <div class="card-body text-end">
-                <h5 class="card-title text-white p-4">{{ item.name}}</h5>
+                <h4 class="card-title text-white p-4">{{ item.name}}</h4>
                 <div class="progress">
                   <div
                     class="progress-bar"
                     role="progressbar"
                     [ngStyle]="{
-                      'width':'80%',
+                      'width': item.value + '%',
                       'background-color': item.bgColor
                     }"
                     aria-valuenow="25"
