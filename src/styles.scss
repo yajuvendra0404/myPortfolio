@@ -23,4 +23,6 @@
   border-radius: 2px;
 
 }
-
+p {
+  font-size: calc(13px + (14 - 13) * ((100vw - 300px)/ (1300 - 300)));
+}

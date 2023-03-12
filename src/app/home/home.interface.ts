@@ -15,4 +15,6 @@ export interface ISkills {
   id:number;
   name: string;
   value: number;
+  bgColor: string;
+  iconImage: string;
 }

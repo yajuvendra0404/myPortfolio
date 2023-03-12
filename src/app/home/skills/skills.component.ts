@@ -21,7 +21,7 @@ export class SkillsComponent implements OnInit {
   optionsModel: number[] = [1, 2, 3, 4 ];
   myOptions: IMultiSelectOption[];
   highcharts: typeof Highcharts = Highcharts;
-
+  allSkills: ISkills[] = [];
   mySettings: IMultiSelectSettings = {
     enableSearch: false,
     buttonClasses: 'btn btn-outline-secondary btn-block',
@@ -109,6 +109,9 @@ export class SkillsComponent implements OnInit {
   constructor( private homeSevice : HomeService ) {
     this.chartOptions = this.intializeHighchart() as Highcharts.Options;
     this.myOptions = <IMultiSelectOption[]> this.homeSevice.getSkills().map((ele) => pick(ele,['id','name']));
+    //// ----- for new implementation ------ ///
+    this.allSkills = this.homeSevice.getSkills();
+    console.log("--- skills ---", this.allSkills);
   }
 
   ngAfterViewInit() {

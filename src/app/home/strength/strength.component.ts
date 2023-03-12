@@ -8,8 +8,12 @@ import { IStrength, IStrengthAnimation } from '../home.interface';
 })
 export class StrengthComponent implements OnInit {
   @Input("strengths") strengths: IStrengthAnimation[] = []
-  constructor() { }
+  constructor() {
 
-  ngOnInit(): void {}
+   }
+
+  ngOnInit(): void {
+    console.log("strength ---", this.strengths)
+  }
 
 }

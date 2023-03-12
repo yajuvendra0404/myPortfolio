@@ -14,16 +14,19 @@ export class StrengthModel {
     this.animationMotion = animationMotion;
     this.animationDuration = animationDuration
   }
-
 }
 
 export class SkillsModel {
   public name: string;
   public value: number;
   public id: number;
-  constructor (skillId: number,skillName: string , skillValue: number) {
+  public bgColor: string;
+  public iconImage: string;
+  constructor ( skillId: number,skillName: string , skillValue: number, bgColor: string, iconImage: string ) {
     this.name =  skillName;
     this.value = skillValue;
     this.id= skillId;
+    this.bgColor = bgColor;
+    this.iconImage = iconImage;
   }
 }
