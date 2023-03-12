@@ -6,7 +6,7 @@
   margin-top: $marginTop;
 }
 .banner{
-  background-image:url("../../../assets/images/pexels-fox-desktop.jpg") ;
+  background:url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
   height: 100vh;
   background-size: cover;
 }
@@ -27,20 +27,20 @@
   }
 }
 
-@media only screen and (max-width: 1200px) { // For tablet
+@media (max-width: 1200px) { // For tablet
 
   .banner {
-    background-image: url("../../../assets/images/pexels-fox-mobile.jpg") fixed no-repeat ;
+    background: url("../../../assets/images/pexels-fox-mobile.jpg") no-repeat;
     background-size: cover;
   }
   .parallax-2 {
     @include prallaxProp(5%, 5%, white, 5vh)
   }
 }
-@media only screen and (max-width: 420px) { // for Mobile
+@media (max-width: 420px) { // for Mobile
 
   .banner {
-    background-image: url("../../../assets/images/pexels-fox-mobile.jpg") fixed no-repeat ;
+    background: url("../../../assets/images/pexels-fox-mobile.jpg") no-repeat ;
     background-size: cover;
   }
   .parallax-2 {

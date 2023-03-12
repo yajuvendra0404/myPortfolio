@@ -1,9 +1,6 @@
 
 .strength {
   font-size: calc(13px + (14 - 13) * ((100vw - 300px)/ (1300 - 300)));
-  // background-color: #374756 ;
-
- //55 71 86
   div{
     height: 200px;
   }
@@ -11,14 +8,21 @@
     color: white;
     text-align: center;
   }
-
 }
 .parallax {
-  background:url("../../../assets/images/parallax-2.jpg") fixed no-repeat;
+  background:url("../../../assets/images/pexels-burst-373904.jpg") fixed no-repeat;
   background-size: cover;
 }
 .inner-parallax {
   padding-bottom:10%;
-  background-image: radial-gradient(  rgba(95, 99, 105, 0.5) 20%,rgba(4, 110, 248, 0.5) 80%);
+  background-image: radial-gradient(  rgba(58, 58, 58, 0.7) 20%,rgba(0, 0, 0, 0.7) 80%);
   position: relative;
+}
+@media (max-width: 420px) { // for Mobile
+
+  .parallax {
+    background: url("../../../assets/images/pexels-burst-mobile.png") fixed no-repeat ;
+    background-size: cover;
+  }
+
 }
