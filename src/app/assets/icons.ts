@@ -6,14 +6,16 @@ import { Injectable } from "@angular/core";
 export class Icons {
   private PATH: string = "../../assets/icons/";
 
-  ////// --- Social Site Icons --- ///////
+  ////// ----- Social Site Icons --- ///////
+
   facebook: string  = `${this.PATH}facebook.png`;
   github: string  = `${this.PATH}github.png`;
   gmail: string = `${this.PATH}gmail.png`;
   instagram: string = `${this.PATH}instagram.png`;
   linkedin: string =  `${this.PATH}linkedin.png`;
 
-  ////// --- Skills Icons --- ///////
+  ////// ----- Skills Icons --- ///////
+
   angular:string = `${this.PATH}icons-angular.png`;
   azure:string = `${this.PATH}icons-azure.png`;
   bootstrap:string = `${this.PATH}icons-bootstrap.png`;
@@ -25,5 +27,7 @@ export class Icons {
   scss:string = `${this.PATH}icons-sass.png`;
   typescript:string = `${this.PATH}icons-typescript.png`;
   jquery: string =`${this.PATH}icons-jquery.png`;
-  nodejs: string = `${this.PATH}icons-node-js.png`
+  nodejs: string = `${this.PATH}icons-node-js.png`;
+  html:string = `${this.PATH}icons-html.png`;
+
 }
