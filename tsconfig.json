@@ -9,7 +9,7 @@
         "*"
       ],
       "@aboutMe/*": [
-        "./app/about-Me/*"
+        "./app/about-me/*"
       ],
       "@assets/*": [
         "./app/assets/*"

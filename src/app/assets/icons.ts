@@ -4,7 +4,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class Icons {
-  private PATH: string = "../../assets/icons/";
+  private PATH: string = "assets/icons/";
 
   ////// ----- Social Site Icons --- ///////
 

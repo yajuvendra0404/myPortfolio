@@ -8,13 +8,15 @@ import { NgxBootstrapMultiselectModule } from 'ngx-bootstrap-multiselect';
 import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
+import { GratitudeComponent } from './gratitude/gratitude.component';
 
 @NgModule({
   declarations: [
     StrengthComponent,
     MyBriefComponent,
     SkillsComponent,
-    HomeComponent
+    HomeComponent,
+    GratitudeComponent
   ],
   imports: [
     CommonModule,

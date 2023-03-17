@@ -54,13 +54,13 @@ ul{
 }
 .custom-card {
   position: fixed;
-  margin-left: 85vw;
   z-index: 10;
-  background-color: $blue-color;
+  background-color: $white-color;
   color: $white-color !important;
   border: $white-color;
   text-align: right;
-  border-radius: 4px;
+  border-radius: 50%;
+
   p{
     margin-bottom: 0;
     font-weight: lighter !important;
@@ -70,7 +70,8 @@ ul{
     margin-bottom: 0;
     font-weight: lighter !important;
   }
-  box-shadow: 1px 1px 5px lightsteelblue inset
+
+  box-shadow: 2px 2px 4px darkslategray;
 }
 
 .hide-sticky-nav {
@@ -83,4 +84,4 @@ ul{
     display: none;
   }
 }
-// https://www.youtube.com/watch?v=skOTEbGwncE&t=159s - video about delarative
+

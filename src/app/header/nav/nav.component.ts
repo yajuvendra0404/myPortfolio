@@ -1,3 +1,4 @@
+import { Images } from '@assets/images';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class NavComponent {
 	isMenuCollapsed = true;
+  profileImg:string;
+  constructor(private images: Images) {
+    this.profileImg = images.profileImage;
+  }
 }
