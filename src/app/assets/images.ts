@@ -8,5 +8,6 @@ export class Images {
 
   ////// ----- Profile Image ----- ///////
   profileImage: string = `${this.PATH}image.jpg`;
+  myselgImage: string = `${this.PATH}myself.jpg`;
   // ../../../assets/images/image.jpg
 }
