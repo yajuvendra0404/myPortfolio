@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProjectComponent } from './project.component';
 import { ProjectRoutingModule } from './project-routing.module';
+import { AppCommonModule } from '@common-module/app-common-module';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { ProjectRoutingModule } from './project-routing.module';
   ],
   imports: [
     CommonModule,
-    ProjectRoutingModule
+    ProjectRoutingModule,
+    AppCommonModule
   ],
 
 })

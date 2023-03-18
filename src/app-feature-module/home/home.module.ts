@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { GratitudeComponent } from './gratitude/gratitude.component';
+import { AppCommonModule } from 'app-common-module/app-common-module';
 // import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -18,14 +19,15 @@ import { GratitudeComponent } from './gratitude/gratitude.component';
     MyBriefComponent,
     SkillsComponent,
     HomeComponent,
-    GratitudeComponent
+    GratitudeComponent,
   ],
   imports: [
     CommonModule,
     HighchartsChartModule,
     NgxBootstrapMultiselectModule,
     FormsModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    AppCommonModule
   ]
 })
 export class HomeModule { }

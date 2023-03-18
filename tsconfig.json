@@ -5,26 +5,44 @@
     "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "paths": {
+
       "@/*": [
         "*"
-      ],
-      "@aboutMe/*": [
-        "./app/about-me/*"
       ],
       "@assets/*": [
         "./app/assets/*"
       ],
-      "@footer/*": [
-        "./app/footer/*"
+
+      /// ------ Feature Module Paths --------///
+      "@feature-module":[
+        "app-feature-modules"
       ],
       "@home/*": [
-        "./app/home/*"
+        "app-feature-module/home/*"
+      ],
+      "@aboutMe/*": [
+        "app-feature-module/about-me/*"
+      ],
+      "@contactMe/*": [
+        "app-feature-module/contact-me/*"
       ],
       "@project/*": [
-        "./app/project/*"
+        "app-feature-module/project/*"
+      ],
+
+
+      /// ------ Common Module Paths --------///
+      "@common-module/*":[
+        "./app-common-module/*"
+      ],
+      "@footer/*": [
+        "./app-common-module/footer/*"
       ],
       "@header/*": [
-        "./app/header/*"
+        "./app-common-module/header/*"
+      ],
+      "@notFound/*":[
+        "./app-common-module/not-found/*"
       ]
     },
     "forceConsistentCasingInFileNames": true,

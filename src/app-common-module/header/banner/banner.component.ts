@@ -12,7 +12,7 @@ export class BannerComponent implements OnInit {
   constructor(private images: Images) {
     this.profileImg = images.profileImage;
   }
-
+  // url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
   ngOnInit(): void {
   }
 
