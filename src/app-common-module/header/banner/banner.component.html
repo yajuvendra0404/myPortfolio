@@ -1,7 +1,16 @@
 <!-- <div class="container"> -->
 
-<section class="banner" [ngStyle]="{}">
-  <div class="layer">
+<section class="banner" [ngStyle]="{
+  'background': 'url('+ bannerImageStyling.background +') no-repeat'  ,
+  'height': bannerImageStyling.height,
+  'background-size': bannerImageStyling.backgroundSize}">
+
+  <div class="layer" [ngStyle]="{
+    'background-image': bannerLayerStyling.backgroundimage,
+    'height': bannerLayerStyling.height,
+    'position':  bannerLayerStyling.position
+  }">
+
     <div class="row mb-5">
       <app-nav></app-nav>
     </div>

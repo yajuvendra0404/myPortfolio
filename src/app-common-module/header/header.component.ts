@@ -7,9 +7,8 @@ import { Images } from '@assets/images';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  // @Input('headerImg') headerImg: string;
-  constructor(private images: Images) {
-    // this.headerImg = images.headerImgHome;
+  @Input('headerImg') headerImg: string ="";
+  constructor() {
   }
 
   ngOnInit(): void {

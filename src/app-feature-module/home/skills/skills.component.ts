@@ -115,7 +115,7 @@ export class SkillsComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    document.getElementsByClassName('highcharts-credits')[0].remove();
+    // document.getElementsByClassName('highcharts-credits')[0].remove();
   }
 
   ngOnInit(): void {}

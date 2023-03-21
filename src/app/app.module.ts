@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppCommonModule } from '@common-module/app-common-module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppCommonModule } from '@common-module/app-common-module';
     NgbModule,
     FormsModule,
     CommonModule,
-    AppCommonModule
+    AppCommonModule,
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
