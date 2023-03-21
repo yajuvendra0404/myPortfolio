@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit{
     private _homeService: HomeService,
     private _sharedService: SharedService,
     private _images:Images
-    ) {
+  ) {
     this.strength = this._homeService.getStrengths();
   }
 
@@ -37,6 +37,12 @@ export class HomeComponent implements OnInit{
         height: '100vh'
       }
     );
+
+    this._sharedService.bannerText.next(
+      {
+        isTextVisible:true
+      }
+    )
   }
 }
 // E:\Angular-Projects\MyPortfolio\myPortfolio\node_modules\.bin\webpack-bundle-analyzer

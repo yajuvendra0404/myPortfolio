@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Images } from '@assets/images';
 import { SharedService } from '@common-module/shared-services/shared.service';
-import { ILayerStylingProps } from '@common-module/app-common-interface';
+import { IbannerText, ILayerStylingProps } from '@common-module/app-common-interface';
 import { IbannerStylingProp } from '@common-module/app-common-interface';
 @Component({
   selector: 'app-banner',
@@ -14,6 +14,7 @@ export class BannerComponent implements OnInit {
   profileImg:string;
   bannerLayerStyling!:  ILayerStylingProps;
   bannerImageStyling!: IbannerStylingProp;
+  bannerTextStyling!: IbannerText;
   constructor(
     private images: Images,
     private _sharedService: SharedService
@@ -26,6 +27,10 @@ export class BannerComponent implements OnInit {
     this._sharedService.layerStylingPropsSubject.subscribe((stylingProps: any) => {
       console.log('layer Props ---', stylingProps);
       this.bannerLayerStyling = stylingProps;
+    })
+    this._sharedService.bannerText.subscribe((stylingProps) => {
+      console.log('text Props ---', stylingProps);
+      this.bannerTextStyling = stylingProps;
     })
   }
   // url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;

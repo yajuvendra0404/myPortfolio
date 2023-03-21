@@ -8,3 +8,7 @@ export interface ILayerStylingProps {
   position: string;
   height: string;
 }
+export interface IbannerText{
+  bannerText?: string;
+  isTextVisible : boolean;
+}
