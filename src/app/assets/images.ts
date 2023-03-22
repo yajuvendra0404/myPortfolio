@@ -15,7 +15,7 @@ export class Images {
 
   ////// ----- Header Images ----- ////////
   headerImgHome: string = `${this.PATH}pexels-fox-desktop.jpg`;
-  headerImgAboutMe: string = `${this.PATH}pexels_about.jpg`;
+  headerImgAboutMe: string = `${this.PATH}pexels-about.jpg`;
   headerImgContact: string = `${this.PATH}pexels-contact.jpg`;
   headerImgPortfolio: string = `${this.PATH}pexels-portfolio.jpg`;
 

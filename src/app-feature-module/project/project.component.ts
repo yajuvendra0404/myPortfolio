@@ -19,7 +19,7 @@ export class ProjectComponent implements OnInit {
       this._sharedService.bannerStylingPropsSubject.next(
         {
           background : this._image.headerImgPortfolio,
-          height : "50vh",
+          height : "75vh",
           backgroundSize : "cover"
         }
       );
@@ -28,7 +28,7 @@ export class ProjectComponent implements OnInit {
         {
           backgroundimage: 'radial-gradient(  rgba(161, 201, 254, 0.8) 1%,rgba(4, 110, 248, 0.8) 99%)',
           position: 'relative',
-          height: '50vh'
+          height: '75vh'
         }
       );
       this._sharedService.bannerText.next({

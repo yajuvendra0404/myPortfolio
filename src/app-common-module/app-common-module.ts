@@ -8,8 +8,7 @@ import { NavDirective } from './header/nav/nav.directive';
 import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './header/banner/banner.component';
 import { RouterModule } from '@angular/router';
-
-
+import { UnderlineSvgComponent } from './underline-svg/underline-svg.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +19,7 @@ import { RouterModule } from '@angular/router';
     NavComponent,
     NavDirective,
     HeaderComponent,
+    UnderlineSvgComponent
   ],
   imports: [
     CommonModule,
@@ -33,6 +33,7 @@ import { RouterModule } from '@angular/router';
     NavComponent,
     NavDirective,
     HeaderComponent,
+    UnderlineSvgComponent
   ]
 })
 export class AppCommonModule { }

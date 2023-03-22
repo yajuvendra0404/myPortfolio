@@ -40,7 +40,7 @@
     background-size: cover;
   }
   .parallax-2 {
-    @include prallaxProp(5%, 5%, white, 5vh)
+    @include prallaxProp(15%, 5%, white, 5vh)
   }
 }
 @media (max-width: 420px) { // for Mobile
@@ -50,7 +50,7 @@
     background-size: cover;
   }
   .parallax-2 {
-    @include prallaxProp(5%, 5%, white, 35vh)
+    @include prallaxProp(50%, 5%, white, 35vh)
   }
 
 }
