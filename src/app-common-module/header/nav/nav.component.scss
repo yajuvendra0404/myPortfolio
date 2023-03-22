@@ -10,16 +10,16 @@ $red-color: rgb(220, 53, 69);
   margin-top: $mt;
 
 }
-@mixin navAnchorHover($bgColor, $textColor){
-  li{
-    &:hover{
+@mixin activeAnchor($bgColor, $textColor){
+  // li{
+  //   &:hover{
       a {
         background-color: $bgColor;
-        color: $textColor;
+        color: $textColor !important;
         border-radius: 3px;
       }
-    }
-  }
+  //   }
+  // }
 }
 @mixin navAnchor ($textColor) {
   a {
@@ -30,10 +30,10 @@ $red-color: rgb(220, 53, 69);
   }
 }
 ul{
-  color: $white-color;
   display: inline;
   padding: 1%;
   li {
+    margin: 1%;
     display: inline;
   }
 
@@ -41,13 +41,26 @@ ul{
 .nav-default {
   @include navigation(absolute,10, 1%);
   @include navAnchor($white-color);
-  @include navAnchorHover($white-color, $blue-color);
+  li{
+    &:hover{
+      @include activeAnchor($white-color, $blue-color);
+    }
+  }
+
+}
+.active-link {
+  @include activeAnchor($white-color, $blue-color);
 }
 .nav-scroll {
   @include navigation(fixed, 10, 0%);
   @include navAnchor($white-color);
-  @include navAnchorHover($white-color, $blue-color );
   background-color: $blue-color;
+  li{
+    &:hover{
+      @include activeAnchor($white-color, $blue-color );
+
+    }
+  }
   font-weight: bold;
   padding: 2%;
   box-shadow: 0px 0px 5px lightsteelblue inset;

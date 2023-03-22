@@ -15,21 +15,18 @@
 <!-- nav-scroll hide-sticky-nav -->
 <ul class="navbar-nav nav-default p-4" appNav>
   <div class="custom-card">
-
       <img [src]="profileImg" width="100px">
-
   </div>
-  <li class="nav-item active">
-    <a class="" [routerLink]="'/home'" (click)="isMenuCollapsed = true"> Home</a>
+  <li class="nav-item"  routerLinkActive="active-link" >
+    <a class="" routerLink="/home" (click)="isMenuCollapsed = true"> Home</a>
   </li>
-  <li class="nav-item">
-    <a class="" [routerLink]="'/portfolio'" (click)="isMenuCollapsed = true"> Portfolio</a>
+  <li class="nav-item" routerLinkActive="active-link" >
+    <a class="" routerLink="/portfolio"   (click)="isMenuCollapsed = true"> Portfolio</a>
   </li>
-
-  <li class="nav-item">
-    <a class="" [routerLink]="'/aboutMe'" (click)="isMenuCollapsed = true"> About Me</a>
+  <li class="nav-item" routerLinkActive="active-link" >
+    <a class="" routerLink="/aboutMe"  (click)="isMenuCollapsed = true"> About Me</a>
   </li>
-  <li class="nav-item">
-    <a class="" [routerLink]="'/contactMe'" (click)="isMenuCollapsed = true"> Contact Me</a>
+  <li class="nav-item" routerLinkActive="active-link" >
+    <a class="" routerLink="/contactMe"  (click)="isMenuCollapsed = true"> Contact Me</a>
   </li>
 </ul>

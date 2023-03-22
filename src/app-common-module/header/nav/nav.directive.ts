@@ -9,7 +9,7 @@ export class NavDirective {
   constructor(private eleRef : ElementRef, private renedere2: Renderer2) { }
   @HostListener( 'document:scroll' ) onScroll (){
     console.log(window.scrollY)
-    if(window.scrollY > 360) {
+    if(window.scrollY > 160) {
       // this.renedere2.removeClass(this.eleRef.nativeElement, 'hide-sticky-nav');
       this.renedere2.addClass(this.eleRef.nativeElement, 'nav-scroll');
       this.renedere2.removeClass(this.eleRef.nativeElement, 'nav-default');

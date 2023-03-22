@@ -35,5 +35,4 @@ export class ProjectComponent implements OnInit {
         isTextVisible: false
       })
   }
-
 }
