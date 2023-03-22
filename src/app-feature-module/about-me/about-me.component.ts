@@ -32,7 +32,7 @@ export class AboutMeComponent implements OnInit {
       }
     );
     this._sharedService.bannerText.next({
-      isTextVisible: false
+      isTextVisible: true
     })
   }
 

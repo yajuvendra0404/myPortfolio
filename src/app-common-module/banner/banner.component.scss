@@ -28,15 +28,13 @@
 }
 .parallax-col-2 {
   @include prallaxProp(5%, 5%, white, 10%);
-  h1 {
-    font-size: calc(40px + (120 - 40) * ((100vw - 300px)/ (1600 - 300)));
-  }
+
 }
 
 @media (max-width: 1200px) { // For tablet
 
   .banner {
-    background: url("../../../assets/images/pexels-fox-mobile.jpg") no-repeat;
+    background: url("../../assets/images/pexels-fox-mobile.jpg") no-repeat;
     background-size: cover;
   }
   .parallax-2 {
@@ -46,7 +44,7 @@
 @media (max-width: 420px) { // for Mobile
 
   .banner {
-    background: url("../../../assets/images/pexels-fox-mobile.jpg") no-repeat ;
+    background: url("../../assets/images/pexels-fox-mobile.jpg") no-repeat ;
     background-size: cover;
   }
   .parallax-2 {

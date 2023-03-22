@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core';
 import { Images } from '@assets/images';
 import { SharedService } from '@common-module/shared-services/shared.service';
 import { IbannerText, ILayerStylingProps } from '@common-module/app-common-interface';
@@ -10,18 +10,23 @@ import { IbannerStylingProp } from '@common-module/app-common-interface';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-  @Input ("bannerImage") bannerImage: string ="";
+
   profileImg:string;
   bannerLayerStyling!:  ILayerStylingProps;
   bannerImageStyling!: IbannerStylingProp;
   bannerTextStyling!: IbannerText;
+  text: string = "";
+  // d1: HT
+
   constructor(
     private images: Images,
-    private _sharedService: SharedService
+    private _sharedService: SharedService,
+    private renderer: Renderer2
   ){
+
     this.profileImg = images.profileImage;
     this._sharedService.bannerStylingPropsSubject.subscribe((stylingProps : any) => {
-      console.log('IMage Props ---', stylingProps);
+      console.log('Image Props ---', stylingProps);
       this.bannerImageStyling = stylingProps;
     })
     this._sharedService.layerStylingPropsSubject.subscribe((stylingProps: any) => {
@@ -32,9 +37,20 @@ export class BannerComponent implements OnInit {
       console.log('text Props ---', stylingProps);
       this.bannerTextStyling = stylingProps;
     })
+
   }
   // url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
+
   ngOnInit(): void {
+    this.text = `
+    <div class="parallax-col-2 text-end m-5">
+    <h4>Hello, I am </h4>
+    <h1>Yajuvendra</h1>
+    <h6>Angular | Full Stack | Web Developer</h6>
+    <button class="btn btn-danger"><i class="bi bi-printer"></i> Resume </button>
+    </div>
+    `;
+
   }
 
 }

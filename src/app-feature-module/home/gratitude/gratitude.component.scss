@@ -3,3 +3,10 @@
   height: 90vh;
   background-size: cover;
 }
+.custom-btn {
+  cursor: pointer;
+  &:hover {
+    border: 1px solid lightgray;
+  }
+
+}

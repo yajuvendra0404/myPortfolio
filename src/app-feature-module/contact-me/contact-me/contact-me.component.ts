@@ -33,7 +33,7 @@ export class ContactMeComponent {
       }
     );
     this._sharedService.bannerText.next({
-      isTextVisible: false
+      isTextVisible: true
     })
   }
 }

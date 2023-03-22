@@ -32,7 +32,7 @@ export class ProjectComponent implements OnInit {
         }
       );
       this._sharedService.bannerText.next({
-        isTextVisible: false
+        isTextVisible: true
       })
   }
 }
