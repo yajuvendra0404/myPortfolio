@@ -14,9 +14,9 @@ export class Images {
 
 
   ////// ----- Header Images ----- ////////
-  headerImgHome: string = `${this.PATH}pexels-fox-desktop.jpg`;
-  headerImgAboutMe: string = `${this.PATH}pexels-about.jpg`;
-  headerImgContact: string = `${this.PATH}pexels-contact.jpg`;
-  headerImgPortfolio: string = `${this.PATH}pexels-portfolio.jpg`;
+  headerImgHome: string = `${this.PATH}pexels-fox-desktop.jpg`; // finalized
+  headerImgAboutMe: string = `${this.PATH}pexels-about.jpg`; // finalized
+  headerImgContact: string = `${this.PATH}pexels-sharad.jpg`;
+  headerImgPortfolio: string = `${this.PATH}pexels-burst.jpg`;
 
 }
