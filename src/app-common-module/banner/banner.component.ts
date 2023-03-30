@@ -50,7 +50,5 @@ export class BannerComponent implements OnInit {
     <button class="btn btn-danger"><i class="bi bi-printer"></i> Resume </button>
     </div>
     `;
-
   }
-
 }

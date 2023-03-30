@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IStrength, IStrengthAnimation } from '../home.interface';
+import { IStrength, IStrengthAnimation } from '@home/home.interface';
 
 @Component({
   selector: 'app-strength',

@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
-import { StrengthComponent } from './strength/strength.component';
-import { SkillsComponent } from './skills/skills.component';
-import { MyBriefComponent } from './my-brief/my-brief.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { NgxBootstrapMultiselectModule } from 'ngx-bootstrap-multiselect';
 import { FormsModule } from '@angular/forms';
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
-import { GratitudeComponent } from './gratitude/gratitude.component';
-import { AppCommonModule } from 'app-common-module/app-common-module';
-// import { BrowserModule } from '@angular/platform-browser';
+import { HomeRoutingModule } from '@home/home-routing.module';
+import { AppCommonModule } from '@common-module/app-common-module';
+
+import { HomeComponent } from '@home/home.component';
+import { GratitudeComponent } from '@home/gratitude/gratitude.component';
+import { StrengthComponent } from '@home/strength/strength.component';
+import { SkillsComponent } from '@home/skills/skills.component';
+import { MyBriefComponent } from '@home/my-brief/my-brief.component';
 
 @NgModule({
   declarations: [

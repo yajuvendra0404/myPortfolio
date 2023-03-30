@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts/highcharts.src';
 import highcharts3D from 'highcharts/highcharts-3d.src';
 import { IMultiSelectOption, IMultiSelectSettings } from 'ngx-bootstrap-multiselect';
-import { HomeService } from '../home.service';
+import { HomeService } from '@home/home.service';
 import { forEach, pick } from 'lodash';
-import { ISkills } from '../home.interface';
+import { ISkills } from '@home/home.interface';
 
 
 highcharts3D(Highcharts);

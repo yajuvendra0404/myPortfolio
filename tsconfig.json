@@ -45,7 +45,26 @@
       ],
       "@notFound/*":[
         "./app-common-module/not-found/*"
+      ],
+      "@chatBox/*":[
+        "./app-common-module/chat-box/*"
+      ],
+      "@customCard/*":[
+        "./app-common-module/custom-card/*"
+      ],
+      "@underlineSvg/*":[
+        "./app-common-module/underline-svg/*"
+      ],
+      "@banner/*":[
+        "./app-common-module/banner/*"
+      ],
+      "@nav/*":[
+        "./app-common-module/nav/*"
+      ],
+      "@connect/*":[
+        "./app-common-module/connect/*"
       ]
+
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,
