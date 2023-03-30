@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-underline-svg',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./underline-svg.component.scss']
 })
 export class UnderlineSvgComponent {
-
+  @Input('lineType') lineType: string="";
 }

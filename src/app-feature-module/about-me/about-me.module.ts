@@ -4,8 +4,6 @@ import { AboutMeComponent } from './about-me.component';
 import { AboutMeRoutingModule } from './about-me-routing.module';
 import { AppCommonModule } from '@common-module/app-common-module';
 import { MyHobbiesComponent } from './my-hobbies/my-hobbies.component';
-import { MyQualificationComponent } from './my-qualification/my-qualification.component';
-import { MyExperienceComponent } from './my-experience/my-experience.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MyResumeComponent } from './my-resume/my-resume.component';
 
@@ -13,8 +11,7 @@ import { MyResumeComponent } from './my-resume/my-resume.component';
   declarations: [
     AboutMeComponent,
     MyHobbiesComponent,
-    MyQualificationComponent,
-    MyExperienceComponent,
+
     MyResumeComponent,
   ],
   imports: [

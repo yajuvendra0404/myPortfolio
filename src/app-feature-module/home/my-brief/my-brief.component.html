@@ -1,49 +1,32 @@
-
 <div class="row min-vh-100 m-5 ">
-  <div class="col-md-4 pt-5 border-left"
-  data-aos="fade-down"
-  data-aos-anchor-placement="center-bottom"
-  data-aos-duration="2000">
-    <div>
-      <h3>Who Am I?</h3>
-      <h6 > Web Developer / Developer Located In Our Lovely Earth</h6>
+  <app-custom-card class="col-md-4" [customCardHeaderContent]= "'Who am I?'">
+    <div class="mt-5" customCardContent>
+      <h6> Web Developer / Developer Located In Our Lovely Earth</h6>
       <p class="mt-4">
-      I am a digital artist, a mastermind of software development who blends creativity and
-      innovation to craft solutions that are not just functional but also aesthetically stunning.
-      My work reflects my passion for excellence and my unwavering commitment to making a positive
-      impact on the world through technology.
+        I am a digital artist, a mastermind of software development who blends creativity and
+        innovation to craft solutions that are not just functional but also aesthetically stunning.
+        My work reflects my passion for excellence and my unwavering commitment to making a positive
+        impact on the world through technology.
       </p>
     </div>
-  </div>
-  
-  <div class="col-md-4 pt-5 border-left"
-       data-aos="fade-down"
-       data-aos-anchor-placement="center-bottom"
-       data-aos-duration="2000">
-    <div >
-      <h3>My Expertise</h3>
-      <ul class="mt-5 me-4">
-        <li *ngFor="let item of expertise">
-          <i [ngClass]="item.class"></i> {{ item.info }}
-          <hr>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-md-4 pt-5 border-left"
-       data-aos="fade-down"
-       data-aos-anchor-placement="center-bottom"
-       data-aos-duration="2000">
-    <div>
-      <h3>Personal Info</h3>
-      <ul class="mt-5 me-4">
-        <li *ngFor="let item of personalInfo">
-          <i [ngClass]="item.class"></i> {{ item.info }}
-          <hr>
-        </li>
-      </ul>
-      <button class="btn btn-danger text-white mt-3"><i class="bi bi-printer"></i> Resume </button>
-    </div>
-  </div>
+  </app-custom-card>
+  <app-custom-card class="col-md-4" [customCardHeaderContent]= "'My Expertise'">
+    <ul class="mt-5 me-4" customCardContent>
+      <li *ngFor="let item of expertise">
+        <i [ngClass]="item.class"></i> {{ item.info }}
+        <hr>
+      </li>
+    </ul>
+  </app-custom-card>
+  <app-custom-card class="col-md-4" [customCardHeaderContent]= "'Personal Info'">
+    <ul class="mt-5 me-4" customCardContent>
+      <li *ngFor="let item of personalInfo">
+        <i [ngClass]="item.class"></i> {{ item.info }}
+        <hr>
+      </li>
+    </ul>
+    <button class="btn btn-danger text-white mt-3"><i class="bi bi-printer"></i> Resume </button>
+  </app-custom-card>
 </div>
+
 

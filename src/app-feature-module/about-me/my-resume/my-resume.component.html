@@ -1,36 +1,37 @@
-<div class="row mt-5 text-center">
-  <h2 class="mt-5"> My Resume </h2>
-  <app-underline-svg class="text-center"></app-underline-svg>
-  <div class="col-md-5 text-left me-5 ms-5 p-3">
-
-      <h4><fa-icon class="font-color" [icon]="faLaptopFile"></fa-icon> Experience </h4>
-
-        <ul>
-          <li class="p-1 m-5 ">
-            <u>Bachelors of computer Engineering ( 2010 - 2014 )</u>
-
-          </li>
-          <li>
-            <u>Post Graduate ( 2021- 2022 )</u>
-          </li>
-        </ul>
+<div class="row mt-5  d-flex justify-content-center">
+  <h2 class="mt-5 text-center"> My Resume </h2>
+  <app-underline-svg class="text-center" [lineType]="'doubleLine'"></app-underline-svg>
 
 
-  </div>
-  <div class="col-md-5 text-left me-5 ms-5 p-3">
 
-      <h4><fa-icon class="font-color" [icon]="faGraduationCap"></fa-icon> Qualification </h4>
+  <app-custom-card  class="col-md-4 " [customCardHeaderContent]="'Qualification'"  >
+    <div  *ngFor="let item of qualificationDetails" customCardContent>
+      <h4 class="font-color">{{item.year}}</h4>
+      <!-- <app-underline-svg  [lineType]="'singleLine'"></app-underline-svg> -->
+      <h6><strong>{{item.courseType}}</strong> </h6>
+      <p><small>{{ item.course}}</small></p>
+      <p>{{item.content}}</p>
 
-        <ul>
-          <li class="p-1 m-5">
-            <u>Bachelors of computer Engineering ( 2010 - 2014 )</u>
+    </div>
+  </app-custom-card>
 
-          </li>
-          <li>
-            <u>Post Graduate ( 2021- 2022 )</u>
-          </li>
-        </ul>
+  <app-custom-card class="col-md-4 " [customCardHeaderContent]="'Experience'">
+    <div *ngFor="let item of experienceDetails" customCardContent>
+      <h4 class="font-color">{{item.year}}</h4>
+
+      <h6><strong>{{item.organisationName}}</strong></h6>
+      <p><small>{{ item.role}}</small></p>
+      <p>{{item.content}}</p>
+
+    </div>
+  </app-custom-card>
 
 
-  </div>
+  <!--
+
+    <h4><fa-icon class="font-color" [icon]="faGraduationCap"></fa-icon> Qualification </h4>
+    <h4><fa-icon class="font-color" [icon]="faLaptopFile"></fa-icon> Experience </h4>
+
+  -->
+
 </div>

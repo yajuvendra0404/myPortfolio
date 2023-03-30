@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BannerComponent } from './banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { UnderlineSvgComponent } from './underline-svg/underline-svg.component';
+import { CustomCardComponent } from './custom-card/custom-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UnderlineSvgComponent } from './underline-svg/underline-svg.component';
     NavComponent,
     NavDirective,
     HeaderComponent,
-    UnderlineSvgComponent
+    UnderlineSvgComponent,
+    CustomCardComponent
   ],
   imports: [
     CommonModule,
@@ -33,7 +35,8 @@ import { UnderlineSvgComponent } from './underline-svg/underline-svg.component';
     NavComponent,
     NavDirective,
     HeaderComponent,
-    UnderlineSvgComponent
+    UnderlineSvgComponent,
+    CustomCardComponent
   ]
 })
 export class AppCommonModule { }
