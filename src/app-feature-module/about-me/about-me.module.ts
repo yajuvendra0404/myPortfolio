@@ -3,16 +3,15 @@ import { CommonModule } from '@angular/common';
 import { AboutMeComponent } from './about-me.component';
 import { AboutMeRoutingModule } from './about-me-routing.module';
 import { AppCommonModule } from '@common-module/app-common-module';
-import { MyHobbiesComponent } from './my-hobbies/my-hobbies.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MyResumeComponent } from './my-resume/my-resume.component';
+import { HireMeComponent } from './hire-me/hire-me.component';
 
 @NgModule({
   declarations: [
     AboutMeComponent,
-    MyHobbiesComponent,
-
     MyResumeComponent,
+    HireMeComponent,
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,4 @@
-<div class="row mt-5  d-flex justify-content-center">
+<div class="row mt-5 d-flex justify-content-center">
   <h2 class="mt-5 text-center"> My Resume </h2>
   <app-underline-svg class="text-center" [lineType]="'doubleLine'"></app-underline-svg>
 
@@ -18,7 +18,7 @@
   <app-custom-card class="col-md-4 " [customCardHeaderContent]="'Experience'">
     <div *ngFor="let item of experienceDetails" customCardContent>
       <h4 class="font-color">{{item.year}}</h4>
-
+      <!-- <app-underline-svg  [lineType]="'singleLine'"></app-underline-svg> -->
       <h6><strong>{{item.organisationName}}</strong></h6>
       <p><small>{{ item.role}}</small></p>
       <p>{{item.content}}</p>
@@ -26,7 +26,7 @@
     </div>
   </app-custom-card>
 
-
+    <app-underline-svg class="text-center"  [lineType]="'singleLine'"></app-underline-svg>
   <!--
 
     <h4><fa-icon class="font-color" [icon]="faGraduationCap"></fa-icon> Qualification </h4>

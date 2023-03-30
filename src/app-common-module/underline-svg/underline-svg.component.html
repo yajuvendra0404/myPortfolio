@@ -1,13 +1,12 @@
 
-<svg class="svgProps2Line" *ngIf="lineType == 'doubleLine'">
+<svg class="svgProps" *ngIf="lineType == 'doubleLine'">
   <line x1="0" y1="3" x2="200" y2="3" style="stroke:rgba(4, 110, 248);stroke-width:4px" />
   <line x1="50" y1="10" x2="150" y2="10" style="stroke:rgba(4, 110, 248);stroke-width:4px" />
   Sorry, your browser does not support inline SVG.
 </svg>
 
-<svg class="svgProps1Line" *ngIf="lineType == 'singleLine'">
-  <line x1="0" y1="3" x2="100" y2="3" style="stroke:rgba(223,52,70);stroke-width:4px" />
+<svg class="svgProps" *ngIf="lineType == 'singleLine'">
+  <line x1="0" y1="3" x2="200" y2="3" style="stroke:rgba(223,52,70);stroke-width:4px" />
   Sorry, your browser does not support inline SVG.
 </svg>
 
-<!-- rbga(223,52,70) -->

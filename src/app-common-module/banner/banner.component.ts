@@ -12,11 +12,11 @@ import { IbannerStylingProp } from '@common-module/app-common-interface';
 export class BannerComponent implements OnInit {
 
   profileImg:string;
-  bannerLayerStyling!:  ILayerStylingProps;
+  bannerLayerStyling!: ILayerStylingProps;
   bannerImageStyling!: IbannerStylingProp;
   bannerTextStyling!: IbannerText;
   text: string = "";
-  // d1: HT
+
 
   constructor(
     private images: Images,

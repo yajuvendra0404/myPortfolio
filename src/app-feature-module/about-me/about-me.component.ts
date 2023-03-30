@@ -1,7 +1,6 @@
 import { SharedService } from '@common-module/shared-services/shared.service';
 import { Images } from '@app/assets/images';
-
-
+import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-me.component.scss']
 })
 export class AboutMeComponent implements OnInit {
+
+  faQuoteLeft = faQuoteLeft;
+  faQuoteRight = faQuoteRight;
 
   constructor(
     private _sharedService: SharedService,
