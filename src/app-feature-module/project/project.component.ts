@@ -1,6 +1,7 @@
 import { SharedService } from '@common-module/shared-services/shared.service';
 import { Images } from '@app/assets/images';
 import { Component, OnInit } from '@angular/core';
+import { faQuoteLeft , faQuoteRight} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-project',
@@ -9,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-
+  faQuoteRight = faQuoteRight;
+  faQuoteLeft = faQuoteLeft;
   constructor(
     private _sharedService: SharedService,
     private _image: Images

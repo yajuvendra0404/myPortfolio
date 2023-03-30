@@ -4,6 +4,8 @@ import { ProjectComponent } from './project.component';
 import { ProjectRoutingModule } from './project-routing.module';
 import { AppCommonModule } from '@common-module/app-common-module';
 
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     ProjectComponent
@@ -11,8 +13,11 @@ import { AppCommonModule } from '@common-module/app-common-module';
   imports: [
     CommonModule,
     ProjectRoutingModule,
-    AppCommonModule
+    AppCommonModule,
+    FontAwesomeModule
   ],
 
 })
-export class ProjectModule { }
+export class ProjectModule {
+
+}
