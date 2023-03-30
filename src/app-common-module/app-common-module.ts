@@ -12,7 +12,7 @@ import { UnderlineSvgComponent } from '@underlineSvg/underline-svg.component';
 import { CustomCardComponent } from '@customCard/custom-card.component';
 import { ChatBoxComponent } from '@chatBox/chat-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     UnderlineSvgComponent,
     CustomCardComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    ChatAreaComponent
   ],
   imports: [
     CommonModule,
@@ -42,7 +43,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     UnderlineSvgComponent,
     CustomCardComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
   ]
 })
 export class AppCommonModule { }

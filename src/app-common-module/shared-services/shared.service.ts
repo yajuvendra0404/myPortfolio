@@ -10,6 +10,7 @@ export class SharedService {
   bannerStylingPropsSubject: Subject<IbannerStylingProp> = new Subject<IbannerStylingProp>();
   layerStylingPropsSubject: Subject<ILayerStylingProps> = new Subject<ILayerStylingProps>();
   bannerText: Subject<IbannerText> = new Subject<IbannerText>();
+  toggleChatAreaSubject: Subject<boolean> = new Subject<boolean>();
 
   constructor() { }
 }
