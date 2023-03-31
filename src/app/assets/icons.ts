@@ -13,6 +13,7 @@ export class Icons {
   gmail: string = `${this.PATH}gmail.png`;
   instagram: string = `${this.PATH}instagram.png`;
   linkedin: string =  `${this.PATH}linkedin.png`;
+  contact: string = `${this.PATH}contact.png`;
 
   ////// ----- Skills Icons --- ///////
 

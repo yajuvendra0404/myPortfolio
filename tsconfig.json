@@ -15,6 +15,7 @@
         "./app/assets/*"
       ],
 
+
       /// ------ Feature Module Paths --------///
       "@feature-module":[
         "app-feature-modules"

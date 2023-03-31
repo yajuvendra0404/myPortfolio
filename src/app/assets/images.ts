@@ -6,7 +6,6 @@ import { Injectable } from "@angular/core";
 export class Images {
   private PATH: string = "assets/images/";
 
-
   ////// ----- Profile page Image ----- ///////
   profileImage: string = `${this.PATH}image.jpg`;
   myselgImage: string = `${this.PATH}myself.jpg`;

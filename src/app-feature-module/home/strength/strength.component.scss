@@ -10,16 +10,20 @@
     color: white;
     text-align: center;
   }
+
 }
+
 .parallax {
-  background:url("../../../assets/images/pexels-burst.jpg") fixed no-repeat;
+  background:url("../../../assets/images/pexels-burst.jpg") fixed no-repeat ;
   background-size: cover;
 }
+
 .inner-parallax {
   padding-bottom:5%;
   background: rgba(4, 110, 248, 0.7) ;
   position: relative;
 }
+
 @media (max-width: 420px) { // for Mobile
 
   .parallax {
