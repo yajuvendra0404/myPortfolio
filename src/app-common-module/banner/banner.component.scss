@@ -5,6 +5,8 @@
   color: $color;
   margin-top: $marginTop;
 }
+
+
 // .banner{
 //   background:url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
 //   height: 100vh;
@@ -27,6 +29,7 @@
 
 }
 .parallax-col-2 {
+
   @include prallaxProp(5%, 5%, white, 10%);
 
 }
@@ -40,6 +43,7 @@
   .parallax-2 {
     @include prallaxProp(15%, 5%, white, 5vh)
   }
+
 }
 @media (max-width: 420px) { // for Mobile
 
