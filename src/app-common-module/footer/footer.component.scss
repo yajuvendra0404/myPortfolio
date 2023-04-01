@@ -1,18 +1,19 @@
 
 .footer {
-  background: url("../../assets/images/footer.jpg") no-repeat;
   overflow:visible !important;
-  .footer-image {
-    background-color: white;
-
-    padding: 4px;
-    box-shadow:0px 10px 15px grey;
+  color:white !important;
+  background-color: #151c2b;
+  li {
+    display: inline;
+    margin-right: 1%;
   }
 }
-a {
-  text-decoration: none;
-  color: white;
+
+.contact-me {
+  background-color: #8384d1;
+  box-shadow: -10px -10px 0px rgb(209, 211, 213,0.2);
 }
-.custom-btn {
-  background:#0072b1;
+.footer-contact-button {
+  background-color: #5c5c5b;
+  color:white;
 }

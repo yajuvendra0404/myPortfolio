@@ -5,14 +5,14 @@
     "outDir": "./dist/out-tsc",
     "paths": {
 
-      "@/*": [
-        "*"
-      ],
+      // "@/*": [
+      //   "*"
+      // ],
       "@app/*": [
         "./app/*"
       ],
       "@assets/*": [
-        "./app/assets/*"
+        "./app-core/assets-service/*"
       ],
 
 

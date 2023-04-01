@@ -1,5 +1,5 @@
 import { SharedService } from '@common-module/shared-services/shared.service';
-import { Images } from '@app/assets/images';
+import { Images } from '@assets/images';
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { Component, OnInit } from '@angular/core';
 

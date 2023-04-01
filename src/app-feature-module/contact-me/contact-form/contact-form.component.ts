@@ -7,7 +7,7 @@ import { Images } from '@assets/images';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
-  
+
   constructor(private _image : Images) {
 
   }
