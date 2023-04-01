@@ -4,16 +4,22 @@
   color:white !important;
   background-color: #151c2b;
   li {
-    display: inline;
+    // display: inline;
     margin-right: 1%;
   }
 }
 
 .contact-me {
-  background-color: #8384d1;
-  box-shadow: -10px -10px 0px rgb(209, 211, 213,0.2);
+  background-color: rgba(4, 110, 248, 0.8);
+  box-shadow: -10px -10px 0px rgba(209, 210, 210, 0.2);
 }
 .footer-contact-button {
   background-color: #5c5c5b;
   color:white;
+}
+.bi {
+  padding:10px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: rgba(4, 110, 248, 0.8);
 }
