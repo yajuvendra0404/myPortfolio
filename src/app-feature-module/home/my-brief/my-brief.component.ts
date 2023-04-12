@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './my-brief.component.html',
   styleUrls: ['./my-brief.component.scss']
 })
+
 export class MyBriefComponent implements OnInit {
 
   personalInfo:any = [
@@ -14,15 +15,11 @@ export class MyBriefComponent implements OnInit {
     { class:"bi bi-geo-alt m-2 ", info:"Location - Ontario (Canada)" },
   ];
   expertise: any = [
-    { class:"bi bi-droplet-fill m-2 ", info:"User Experience Development (Ux)" },
+    { class:"bi bi-droplet-half m-2 ", info:"User Experience Development (Ux)" },
     { class:"bi bi-globe m-2 ", info:"Web Developement" },
     { class:"bi bi-braces-asterisk m-2 ", info:"Backend Development" },
-  ]
+  ];
 
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
+  constructor() {}
+  ngOnInit(): void {}
 }

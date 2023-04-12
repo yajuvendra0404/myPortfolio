@@ -26,16 +26,7 @@ export class ContactFormComponent {
       id:"inputSubject",
       ariadescribedby:"enter subject",
       placeholder:"Enter Subject"
-    }, {
-      type : "textArea",
-      class: "form-control",
-      label: "Message",
-      formControlName:"messageFormControl",
-      id:"inputEmail",
-      ariadescribedby:"enter message",
-      placeholder:"Enter Message",
-      rows: 3
-    },
+    }
   ];
 
   constructor(private _image : Images) {
@@ -46,11 +37,3 @@ export class ContactFormComponent {
     })
   }
 }
-
-
-// type: string;
-// class:string;
-// formControlName:string;
-// id:string;
-// ariadescribedby:string;
-// placeholder:string;
