@@ -6,21 +6,30 @@
     <div class="col-md-5 p-5 mt-5 mb-5">
       <h1>Send Me A Message</h1>
       <hr>
-      <form >
+      <form [formGroup]="contactMeForm">
+        <div *ngFor="let inputConfig of formFieldConfiguration">
+          <div class="form-group">
+            <label [for]="inputConfig.id">{{ inputConfig.label }}</label>
+            <input
+              [type]="inputConfig.type"
+              [class]="inputConfig.class"
+              [formControlName]="inputConfig.formControlName"
+              [id]="inputConfig.id"
+              [placeholder]="inputConfig.placeholder"
+            >
+          </div>
+
+        </div>
 
         <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email">
-          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Topic</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Topic">
-          <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-        </div>
-        <div class="form-group">
-          <label for="exampleFormControlTextarea1">Message</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1"  placeholder="Enter Message" rows="3"></textarea>
+          <label for="inputMessage">Message</label>
+          <textarea
+            class="form-control"
+            formControlName="messageFormControl"
+            id="inputMessage"
+            aria-describedby="enter message"
+            placeholder="Enter Message"
+            rows="3"></textarea>
         </div>
       </form>
     </div>
