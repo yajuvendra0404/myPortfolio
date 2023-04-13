@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Images } from '@assets/images';
 import { IContactForm } from './contact-form.interface';
 import { SharedValidatorsService } from '@common-module/shared-services/shared-validators.service';
-import { DEFAULT_MESSAGES, MESSAGE_KEYS } from '@common-module/enums/errorMsg';
+// import { DEFAULT_MESSAGES, MESSAGE_KEYS } from '@common-module/enums/errorMsg';
 
 @Component({
   selector: 'app-contact-form',
@@ -16,25 +16,7 @@ export class ContactFormComponent {
   emailError: boolean = false;
   subjectError: boolean = false;
   messageError: boolean = false;
-  // formFieldConfiguration: IContactForm[] = [
-  //   {
-  //     type : "email",
-  //     class: "form-control",
-  //     label: "Email",
-  //     formControlName:"emailFormControl",
-  //     id:"inputEmail",
-  //     ariadescribedby:"enter email",
-  //     placeholder:"Enter Email"
-  //   }, {
-  //     type : "text",
-  //     class: "form-control",
-  //     label: "Subject",
-  //     formControlName:"subjectFormControl",
-  //     id:"inputSubject",
-  //     ariadescribedby:"enter subject",
-  //     placeholder:"Enter Subject"
-  //   }
-  // ];
+
   // !contactMeForm.get(inputConfig.formControlName)?.valid &&
   // contactMeForm.get(inputConfig.formControlName)?.touched &&
   // contactMeForm.get('messageFormControl')?.errors?.['required']
@@ -68,18 +50,20 @@ export class ContactFormComponent {
 
     })
   }
-  ngAfterViewInit() {
-    this.contactMeForm.valueChanges.subscribe( data => {
-
-      Object.keys(data).forEach(key =>{
-        let control = this.contactMeForm.get(key);
-        if(control?.errors){
-          let errorKey: string = Object.keys(control?.errors)[0];
-          console.log("key ---", control?.errors)
-          control.setErrors({ customError:  DEFAULT_MESSAGES[errorKey]});
-        }
-      })
-
-    })
-  }
+  // ngAfterViewInit() {
+  //   // this.contactMeForm.valueChanges.subscribe( data => {
+  //   //   Object.keys(data).forEach(key =>{
+  //   //     let control = this.contactMeForm.get(key);
+  //   //     MESSAGE_KEYS.maxLength = control?.errors?.['maxlength']?.requiredLength;
+  //   //     MESSAGE_KEYS.minLength = control?.errors?.['minlength']?.requiredLength;;
+  //   //     // MESSAGE_KEYS.propertyName ;
+  //   //     console.log("---- message keys -----", MESSAGE_KEYS);
+  //   //     console.log("---- message keys -----", control);
+  //   //     if(control?.errors){
+  //   //       let errorKey: string = Object.keys(control?.errors)[0];
+  //   //       control.setErrors({ customError:  DEFAULT_MESSAGES[errorKey]});
+  //   //     }
+  //   //   })
+  //   // })
+  // }
 }

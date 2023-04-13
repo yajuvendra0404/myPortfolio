@@ -15,9 +15,12 @@
               placeholder="Enter Email"
             >
           </div>
+
           <span *ngIf="!contactMeForm.get('emailFormControl')?.valid &&
                         contactMeForm.get('emailFormControl')?.touched" >
-                        <p><small> {{ contactMeForm.controls['emailFormControl'].errors?.['customError'] }} </small></p>
+                        <!-- <p><small> {{ contactMeForm.controls['emailFormControl'].errors?.['customError'] }} </small></p> -->
+                        <p *ngIf="contactMeForm.get('emailFormControl')?.errors?.['required']"><small> This field is required. </small></p>
+                        <p *ngIf="contactMeForm.get('emailFormControl')?.errors?.['email']"><small> Invalid email address. </small></p>
           </span>
 
 
@@ -32,7 +35,10 @@
           </div>
           <span *ngIf="!contactMeForm.get('subjectFormControl')?.valid &&
                         contactMeForm.get('subjectFormControl')?.touched" >
-                        <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p>
+                        <!-- <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p> -->
+                        <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['required']"><small> This field is required. </small></p>
+                        <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['maxlength']"><small> Max length is 50 characters. </small></p>
+
           </span>
 
         <div class="form-group mt-3">
@@ -48,7 +54,9 @@
         </div>
         <span *ngIf="!contactMeForm.get('messageFormControl')?.valid &&
                       contactMeForm.get('messageFormControl')?.touched" >
-                        <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p>
+                        <!-- <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p> -->
+                        <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['required']"><small> This field is required. </small></p>
+                        <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['maxlength']"><small> Max length is 200 characters. </small></p>
         </span>
         <hr>
         <button type="submit" class="btn btn-dark" [disabled]="!contactMeForm.valid">Verify Email</button>
