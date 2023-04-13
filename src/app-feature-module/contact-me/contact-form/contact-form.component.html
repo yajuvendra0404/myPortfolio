@@ -1,28 +1,41 @@
 
-<div class="row min-vh-70 d-flex justify-content-center ">
-  <!-- <app-underline-svg class="text-center" [lineType]="'singleLine'"></app-underline-svg> -->
-  <div class="jack">
-    <div class="col-md-5 p-5 mt-5 mb-5">
-      <h1>Send Me A Message</h1>
+<div class="row min-vh-50 d-flex justify-content-center ">
+  <div class="form_container">
+    <div class="col-md-5 p-5  mb-5">
+      <h3>Send Me A Message</h3>
       <hr>
-
       <form [formGroup]="contactMeForm">
 
-        <div *ngFor="let inputConfig of formFieldConfiguration">
-          <div class="form-group">
-            <label [for]="inputConfig.id">{{ inputConfig.label }}</label>
+          <div class="form-group mt-3">
             <input
-              [type]="inputConfig.type"
-              [class]="inputConfig.class"
-              [formControlName]="inputConfig.formControlName"
-              [id]="inputConfig.id"
-              [placeholder]="inputConfig.placeholder"
+              type="text"
+              class="form-control"
+              formControlName="emailFormControl"
+              id="inputEmail"
+              placeholder="Enter Email"
             >
           </div>
-        </div>
+          <span *ngIf="!contactMeForm.get('emailFormControl')?.valid &&
+                        contactMeForm.get('emailFormControl')?.touched" >
+                        <p><small> {{ contactMeForm.controls['emailFormControl'].errors?.['customError'] }} </small></p>
+          </span>
 
-        <div class="form-group">
-          <label for="inputMessage">Message</label>
+
+          <div class="form-group mt-3">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="subjectFormControl"
+              id="inputSubject"
+              placeholder="Enter Subject"
+            >
+          </div>
+          <span *ngIf="!contactMeForm.get('subjectFormControl')?.valid &&
+                        contactMeForm.get('subjectFormControl')?.touched" >
+                        <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p>
+          </span>
+
+        <div class="form-group mt-3">
           <textarea
             class="form-control"
             formControlName="messageFormControl"
@@ -33,7 +46,12 @@
           >
           </textarea>
         </div>
-
+        <span *ngIf="!contactMeForm.get('messageFormControl')?.valid &&
+                      contactMeForm.get('messageFormControl')?.touched" >
+                        <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p>
+        </span>
+        <hr>
+        <button type="submit" class="btn btn-dark" [disabled]="!contactMeForm.valid">Verify Email</button>
       </form>
     </div>
   </div>

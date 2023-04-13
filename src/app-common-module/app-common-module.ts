@@ -13,6 +13,8 @@ import { CustomCardComponent } from '@customCard/custom-card.component';
 import { ChatBoxComponent } from '@chatBox/chat-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
+// import { ShowFormErrorDirective } from './shared-Directive/show-form-error.directive';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
   imports: [
     CommonModule,
     RouterModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+
   ],
   exports:[
     FooterComponent,
@@ -43,7 +46,7 @@ import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
     HeaderComponent,
     UnderlineSvgComponent,
     CustomCardComponent,
-    ChatBoxComponent,
+    ChatBoxComponent
   ]
 })
 export class AppCommonModule { }

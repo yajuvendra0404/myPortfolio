@@ -1,11 +1,23 @@
 
 .row {
   background: url('../../../assets/images/mail-box.png') no-repeat;
-  background-size: cover;
+  background-size:cover;
   color:white;
 }
-.jack{
+.form_container{
   background: linear-gradient(to right,  rgba(4, 110, 248, 0.3) 0%, rgba(4, 110, 248,0.7) 100%)   // rgba(4, 110, 248, 0.642);
 }
 
-// 51, G:204, B:255
+input.ng-invalid.ng-touched{
+  border: 1px solid #f63737;
+  box-shadow: 1px 1px 3px #f63737;
+}
+textarea.ng-invalid.ng-touched{
+  border: 1px solid #f63737;
+  box-shadow: 1px 1px 3px #f63737;
+}
+
+span {
+  color:#f63737;
+}
+
