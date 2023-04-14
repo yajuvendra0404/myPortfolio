@@ -36,11 +36,10 @@
           <span *ngIf="!contactMeForm.get('subjectFormControl')?.valid &&
                         contactMeForm.get('subjectFormControl')?.touched" >
                         <!-- <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p> -->
+
                         <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['required']"><small> This field is required. </small></p>
                         <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['maxlength']"><small> Max length is 50 characters. </small></p>
-
           </span>
-
         <div class="form-group mt-3">
           <textarea
             class="form-control"
@@ -55,6 +54,7 @@
         <span *ngIf="!contactMeForm.get('messageFormControl')?.valid &&
                       contactMeForm.get('messageFormControl')?.touched" >
                         <!-- <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p> -->
+
                         <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['required']"><small> This field is required. </small></p>
                         <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['maxlength']"><small> Max length is 200 characters. </small></p>
         </span>

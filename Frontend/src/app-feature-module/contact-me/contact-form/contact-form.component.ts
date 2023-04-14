@@ -50,20 +50,21 @@ export class ContactFormComponent {
 
     })
   }
-  // ngAfterViewInit() {
-  //   // this.contactMeForm.valueChanges.subscribe( data => {
-  //   //   Object.keys(data).forEach(key =>{
-  //   //     let control = this.contactMeForm.get(key);
-  //   //     MESSAGE_KEYS.maxLength = control?.errors?.['maxlength']?.requiredLength;
-  //   //     MESSAGE_KEYS.minLength = control?.errors?.['minlength']?.requiredLength;;
-  //   //     // MESSAGE_KEYS.propertyName ;
-  //   //     console.log("---- message keys -----", MESSAGE_KEYS);
-  //   //     console.log("---- message keys -----", control);
-  //   //     if(control?.errors){
-  //   //       let errorKey: string = Object.keys(control?.errors)[0];
-  //   //       control.setErrors({ customError:  DEFAULT_MESSAGES[errorKey]});
-  //   //     }
-  //   //   })
-  //   // })
-  // }
+  ngAfterViewInit() {
+    // this.contactMeForm.valueChanges.subscribe( data => {
+    // Object.keys(data).forEach(key =>{
+    //   let control = this.contactMeForm.get(key);
+    //   // MESSAGE_KEYS.maxLength = control?.errors?.['maxlength']?.requiredLength;
+    //   // MESSAGE_KEYS.minLength = control?.errors?.['minlength']?.requiredLength;;
+    //   // MESSAGE_KEYS.propertyName ;
+    //   // console.log("---- message keys -----", MESSAGE_KEYS);
+    //   // console.log("---- message keys -----", control);
+    //   if(control?.errors){
+    //     let errorKey: string = Object.keys(control?.errors)[0];
+    //     control.setErrors({ customError: DEFAULT_MESSAGES[errorKey]});
+    //   }
+    //   })
+    // })
+  }
+
 }
