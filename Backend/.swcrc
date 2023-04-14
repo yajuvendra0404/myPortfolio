@@ -1,0 +1,23 @@
+{
+    "minify": true,
+    "jsc": {
+      "parser": {
+        "syntax": "typescript",
+        "tsx": false,
+        "decorators": true,
+        "dynamicImport": true
+      },
+      "loose": false,
+      "minify": {
+        "compress": {
+            "unused": true
+        },
+        "mangle": false
+      },
+      "target": "es2018",
+      "baseUrl": "./"
+    },
+    "module": {
+      "type": "commonjs"
+    }
+  }
