@@ -3,6 +3,7 @@ import { Images } from '@assets/images';
 import { SharedService } from '@common-module/shared-services/shared.service';
 import { IbannerText, ILayerStylingProps } from '@common-module/app-common-interface';
 import { IbannerStylingProp } from '@common-module/app-common-interface';
+import { Subject, Subscription } from 'rxjs';
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -16,7 +17,7 @@ export class BannerComponent implements OnInit {
   bannerImageStyling!: IbannerStylingProp;
   bannerTextStyling!: IbannerText;
   text: string = "";
-
+  subscriptionStore: Subscription[] =[];
 
   constructor(
     private images: Images,
@@ -25,18 +26,29 @@ export class BannerComponent implements OnInit {
   ){
 
     this.profileImg = images.profileImage;
-    this._sharedService.bannerStylingPropsSubject.subscribe((stylingProps : any) => {
-      console.log('Image Props ---', stylingProps);
-      this.bannerImageStyling = stylingProps;
-    })
-    this._sharedService.layerStylingPropsSubject.subscribe((stylingProps: any) => {
-      console.log('layer Props ---', stylingProps);
-      this.bannerLayerStyling = stylingProps;
-    })
-    this._sharedService.bannerText.subscribe((stylingProps) => {
-      console.log('text Props ---', stylingProps);
-      this.bannerTextStyling = stylingProps;
-    })
+
+    this.subscriptionStore.push (
+      this._sharedService.bannerStylingPropsSubject.subscribe((stylingProps : any) => {
+        console.log('Image Props ---', stylingProps);
+        this.bannerImageStyling = stylingProps;
+      })
+    );
+
+    this.subscriptionStore.push (
+      this._sharedService.layerStylingPropsSubject.subscribe((stylingProps: any) => {
+        console.log('layer Props ---', stylingProps);
+        this.bannerLayerStyling = stylingProps;
+      })
+    );
+
+
+    this.subscriptionStore.push (
+      this._sharedService.bannerText.subscribe((stylingProps) => {
+        console.log('text Props ---', stylingProps);
+        this.bannerTextStyling = stylingProps;
+      })
+    );
+
 
   }
   // url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
@@ -50,5 +62,11 @@ export class BannerComponent implements OnInit {
     <button class="btn btn-danger"><i class="bi bi-printer"></i> Resume </button>
     </div>
     `;
+  }
+
+  ngDestory(){
+    this.subscriptionStore.forEach( ele => {
+      ele.unsubscribe();
+    })
   }
 }

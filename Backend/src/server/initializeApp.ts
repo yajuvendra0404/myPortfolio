@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import mongoose, { Model } from 'mongoose';
 
+
 export default class InitializeApp{
 
    private app:express.Application;

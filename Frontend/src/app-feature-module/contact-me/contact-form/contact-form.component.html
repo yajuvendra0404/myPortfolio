@@ -23,7 +23,6 @@
                         <p *ngIf="contactMeForm.get('emailFormControl')?.errors?.['email']"><small> Invalid email address. </small></p>
           </span>
 
-
           <div class="form-group mt-3">
             <input
               type="text"
@@ -36,7 +35,6 @@
           <span *ngIf="!contactMeForm.get('subjectFormControl')?.valid &&
                         contactMeForm.get('subjectFormControl')?.touched" >
                         <!-- <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p> -->
-
                         <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['required']"><small> This field is required. </small></p>
                         <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['maxlength']"><small> Max length is 50 characters. </small></p>
           </span>

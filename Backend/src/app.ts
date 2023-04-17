@@ -10,5 +10,4 @@ const initApp = new InitializeApp(
     config.MONGODB_STRING,
     config.PORT,
     config.SECRET_KEY
-
 );
