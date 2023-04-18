@@ -1,5 +1,4 @@
-import Controller from "@/controllers/controller";
-import Message from "../models/message";
+import Controller from "../controllers/controller.js";
 import { Router } from "express";
 import { autoInjectable } from "tsyringe";
 
@@ -15,6 +14,7 @@ export default class Routes {
             _controller.testRoute(req, res, next);       
         })
         this.routes.post(`${this.path}message`, ( req, res, next)=>{
+            console.log("--- IN  message  route ---");
             _controller.saveMessage(req, res, next);     
         })
     }
