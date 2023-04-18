@@ -2,27 +2,29 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose, { Model } from 'mongoose';
+import { autoInjectable} from "tsyringe";
+import Config from "../configs/config.js";
+import Routes from '../routes/routes.js';
 
-
+@autoInjectable()
 export default class InitializeApp{
 
    private app:express.Application;
-   MONGODB_CONNECTION_STRING?:string;
-   PORT?:string;
-   SECRET_KEY?:string;
-   routes: express.IRouter;
+   private MONGODB_CONNECTION_STRING?:string;
+   private PORT?:string;
+   private SECRET_KEY?:string;
+   private routes: express.IRouter;
 
   constructor(
-      routes: express.IRouter,
-      MONGODB_CONNECTION_STRING?: string, 
-      PORT?: string, 
-      SECRET_KEY?: string
+      _config:Config,
+      _routes:Routes
   ){
     // ------ variable initialization
-    this.MONGODB_CONNECTION_STRING = MONGODB_CONNECTION_STRING;
-    this.PORT = PORT;
-    this.SECRET_KEY = SECRET_KEY;
-    this.routes = routes;
+    this.MONGODB_CONNECTION_STRING = _config.MONGODB_CONNECTION_STRING;
+    console.log(" --- schema ----", _config);
+    this.PORT = _config?.PORT;
+    this.SECRET_KEY = _config?.SECRET_KEY;
+    this.routes = _routes.routes;
 
     // ------ function initialization
     this.app = express();
