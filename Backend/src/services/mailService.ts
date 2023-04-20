@@ -8,7 +8,7 @@ export class MailService {
 
     constructor(private _config : Config) {}
 
-    async sendMail(userMailId: string): Promise<{[key:string]:string}> {
+    async sendMail(userMailId: string): Promise<{[key:string]:string} | string> {
         try {
             let transporter = nodemailer.createTransport({
                 host: this._config.SMTP_HOST,
@@ -28,7 +28,8 @@ export class MailService {
             return {'message':'Verification OTP Send'};  
             
         } catch (exp) {
-            return {"error":"Unable To Send Verification OTP."}
+            throw new Error("Verification OTP was not Send");
+            // return {"error":"Unable To Send Verification OTP."}
         }
     }
 

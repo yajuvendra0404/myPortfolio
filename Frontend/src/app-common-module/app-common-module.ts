@@ -14,8 +14,7 @@ import { ChatBoxComponent } from '@chatBox/chat-box.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
 // import { ShowFormErrorDirective } from './shared-Directive/show-form-error.directive';
-
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -34,7 +33,7 @@ import { ChatAreaComponent } from './chat-box/chat-area/chat-area.component';
     CommonModule,
     RouterModule,
     FontAwesomeModule,
-
+    HttpClientModule
   ],
   exports:[
     FooterComponent,

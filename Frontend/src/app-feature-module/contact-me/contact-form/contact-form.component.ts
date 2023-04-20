@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Images } from '@assets/images';
 import { IContactForm } from './contact-form.interface';
-import { SharedValidatorsService } from '@common-module/shared-services/shared-validators.service';
+import { SharedValidatorsService } from '@common-module/shared-services/validator-services/shared-validators.service';
 // import { DEFAULT_MESSAGES, MESSAGE_KEYS } from '@common-module/enums/errorMsg';
 
 @Component({
@@ -16,6 +16,8 @@ export class ContactFormComponent {
   emailError: boolean = false;
   subjectError: boolean = false;
   messageError: boolean = false;
+  isSpinnerVisible:boolean = false;
+  isOTPFieldVisible:boolean = false;
 
   // !contactMeForm.get(inputConfig.formControlName)?.valid &&
   // contactMeForm.get(inputConfig.formControlName)?.touched &&
@@ -49,6 +51,16 @@ export class ContactFormComponent {
       ])
 
     })
+  }
+  generateOTP() {
+    this.isSpinnerVisible = !this.isSpinnerVisible
+    setTimeout(() => {
+      this.isSpinnerVisible = !this.isSpinnerVisible;
+      this.isOTPFieldVisible =!this.isOTPFieldVisible
+     }, 3000);
+  }
+  onSubmit () {
+
   }
   ngAfterViewInit() {
     // this.contactMeForm.valueChanges.subscribe( data => {

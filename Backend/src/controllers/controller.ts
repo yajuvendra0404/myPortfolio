@@ -35,10 +35,9 @@ export default class Controller {
         }
     }
 
+    // send mail for OTP verification
     async sendmail(req: Request, res: Response, next: NextFunction) {
-
         let mailSent = await this._mailService.sendMail(req.body.userId);
-        console.log("----sendmail Method---",mailSent);
         res.status(200).json(mailSent);
     }
 }
