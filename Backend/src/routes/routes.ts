@@ -14,8 +14,10 @@ export default class Routes {
             _controller.testRoute(req, res, next);       
         })
         this.routes.post(`${this.path}message`, ( req, res, next)=>{
-            console.log("--- IN  message  route ---");
             _controller.saveMessage(req, res, next);     
+        })
+        this.routes.post(`${this.path}mail`,(req, res, next)=> {
+            _controller.sendmail(req, res, next);
         })
     }
 }
