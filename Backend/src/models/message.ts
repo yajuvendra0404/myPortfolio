@@ -9,4 +9,9 @@ export default class Message {
         OTP:{ type:Number, trim:true, required:true}
     }))
 
+    OTP = mongoose.model ("OTP", new mongoose.Schema({
+        userId:{ type:String, required: true, trim: true },
+        OTP:{ type:Number, trim:true, required:true}  
+    }))
+    
 }
