@@ -19,15 +19,12 @@ export class MailService {
                     pass: this._config.SMTP_PASSWORD
                 },
             });
-            let info = await transporter.sendMail({
+            await transporter.sendMail({
                 from: '"m04.portfolio.04" <m04.portfolio.04@gmail.com>', 
                 to: userMailId,
                 subject: "Email Verification OTP",
                 html: this.getTemplate(),
             });
-
-            console.log("Message sent: ", info.messageId);
-
             return {'message':'Verification OTP Send'};  
             
         } catch (exp) {
