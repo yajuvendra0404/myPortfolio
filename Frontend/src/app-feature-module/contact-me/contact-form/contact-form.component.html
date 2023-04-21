@@ -10,51 +10,52 @@
             <input
               type="text"
               class="form-control"
-              formControlName="emailFormControl"
+              formControlName="emailId"
               id="inputEmail"
               placeholder="Enter Email"
             >
-            <span *ngIf="!contactMeForm.get('emailFormControl')?.valid && contactMeForm.get('emailFormControl')?.touched" >
-            <!-- <p><small> {{ contactMeForm.controls['emailFormControl'].errors?.['customError'] }} </small></p> -->
-              <p *ngIf="contactMeForm.get('emailFormControl')?.errors?.['required']"><small> This field is required. </small></p>
-              <p *ngIf="contactMeForm.get('emailFormControl')?.errors?.['email']"><small> Invalid email address. </small></p>
-            </span>
+
           </div>
+          <span *ngIf="!contactMeForm.get('emailId')?.valid && contactMeForm.get('emailId')?.touched" >
+            <!-- <p><small> {{ contactMeForm.controls['emailFormControl'].errors?.['customError'] }} </small></p> -->
+              <p *ngIf="contactMeForm.get('emailId')?.errors?.['required']"><small> This field is required. </small></p>
+              <p *ngIf="contactMeForm.get('emailId')?.errors?.['email']"><small> Invalid email address. </small></p>
+          </span>
 
           <div class="form-group mt-3">
             <input
               type="text"
               class="form-control"
-              formControlName="subjectFormControl"
+              formControlName="subject"
               id="inputSubject"
               placeholder="Enter Subject"
             >
-            <span *ngIf="!contactMeForm.get('subjectFormControl')?.valid && contactMeForm.get('subjectFormControl')?.touched" >
-            <!-- <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p> -->
-              <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['required']"><small> This field is required. </small></p>
-              <p *ngIf="contactMeForm.get('subjectFormControl')?.errors?.['maxlength']"><small> Max length is 50 characters. </small></p>
-            </span>
           </div>
-
+          <span *ngIf="!contactMeForm.get('subject')?.valid && contactMeForm.get('subject')?.touched" >
+            <!-- <p><small> {{ contactMeForm.controls['subjectFormControl'].errors?.['customError'] }} </small></p> -->
+              <p *ngIf="contactMeForm.get('subject')?.errors?.['required']"><small> This field is required. </small></p>
+              <p *ngIf="contactMeForm.get('subject')?.errors?.['maxlength']"><small> Max length is 50 characters. </small></p>
+          </span>
           <div class="form-group mt-3">
             <textarea
               class="form-control"
-              formControlName="messageFormControl"
+              formControlName="message"
               id="inputMessage"
               aria-describedby="enter message"
               placeholder="Enter Message"
               rows="3"
             >
             </textarea>
-            <span *ngIf="!contactMeForm.get('messageFormControl')?.valid && contactMeForm.get('messageFormControl')?.touched" >
-              <!-- <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p> -->
-
-              <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['required']"><small> This field is required. </small></p>
-              <p *ngIf="contactMeForm.get('messageFormControl')?.errors?.['maxlength']"><small> Max length is 200 characters. </small></p>
-            </span>
           </div>
+          <span *ngIf="!contactMeForm.get('message')?.valid && contactMeForm.get('message')?.touched" >
+            <!-- <p><small> {{ contactMeForm.controls['messageFormControl'].errors?.['customError']  }} </small></p> -->
 
+            <p *ngIf="contactMeForm.get('message')?.errors?.['required']"><small> This field is required. </small></p>
+            <p *ngIf="contactMeForm.get('message')?.errors?.['maxlength']"><small> Max length is 200 characters. </small></p>
+          </span>
         <hr>
+
+
         <div class="form-group mt-3 " *ngIf="!isSpinnerVisible && !isOTPFieldVisible">
           <button type="button" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" (click)="generateOTP()">Verify Email</button>
         </div>

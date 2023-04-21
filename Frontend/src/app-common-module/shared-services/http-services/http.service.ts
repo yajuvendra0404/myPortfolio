@@ -5,7 +5,7 @@ import { Observable, catchError } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  baseURL: string= "http://localhost/";
+  private baseURL: string= "http://localhost:3110/";
   constructor(private _http: HttpClient) {}
 
   sendFetchRequest(url: string): Observable<any> {
@@ -13,10 +13,10 @@ export class HttpService {
     .pipe(catchError(this.errorHandler.bind(this)))
   }
   sendPostRequest(url: string, Json:any) : Observable<any> {
-    return this._http.post<any>(`${this.baseURL}${url}`,Json,{})
+    return this._http.post<any>(`${this.baseURL}${url}`,Json)
     .pipe(catchError(this.errorHandler.bind(this)))
   }
-  errorHandler() {
+  private errorHandler() {
     return "error occured";
   }
 }

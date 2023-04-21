@@ -7,37 +7,34 @@
 */
 
 import { autoInjectable } from "tsyringe";
-import Message from "../models/message.js";
 import { NextFunction,Request, Response } from "express";
-import { MailService } from "../services/mailService.js";
-
+import { Service } from "../services/service.js";
 
 @autoInjectable()
 export default class Controller {
     
-
     constructor ( 
-        private _messageModel: Message, 
-        private _mailService: MailService
+        private _service: Service
     ) {}
 
+    // ------ test route.
     testRoute(req: Request, res: Response, next: NextFunction) {
         res.status(200).json({ title: 'Test Complete.' }); 
     }
 
+    // ------ save message after OTP verification.
     async saveMessage(req: Request, res: Response, next: NextFunction) {
         try {
-            let OTP = (Math.random()*1000000).toFixed(0);
-            await this._messageModel.Message.create({...req.body,OTP});  
-            res.status(200).json({ message: "Data Saved"})
+            var json = this._service.saveMessage(req.body);
+            res.status(200).json(json) 
         } catch(exp) {
             console.log("exception occured");
         }
     }
 
-    // send mail for OTP verification
-    async sendmail(req: Request, res: Response, next: NextFunction) {
-        let mailSent = await this._mailService.sendMail(req.body.userId);
+    // ------ send mail for OTP verification.
+    async sendOTP(req: Request, res: Response, next: NextFunction) {
+        let mailSent = await this._service.sendMail(req.body.emailId);
         res.status(200).json(mailSent);
     }
 }

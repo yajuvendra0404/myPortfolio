@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faMessage, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import { Subject } from 'rxjs';
-import { SharedService } from '@common-module/shared-services/shared.service';
+import { SharedService } from '@common-module/shared-services/shared-services/shared.service';
 // <i class="fa-solid fa-message-quote"></i>
 @Component({
   selector: 'app-chat-box',

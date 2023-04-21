@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms'
 import { Images } from '@assets/images';
 import { IContactForm } from './contact-form.interface';
 import { SharedValidatorsService } from '@common-module/shared-services/validator-services/shared-validators.service';
+import { ApiService } from '@common-module/shared-services/api-services/api.service';
 // import { DEFAULT_MESSAGES, MESSAGE_KEYS } from '@common-module/enums/errorMsg';
 
 @Component({
@@ -19,32 +20,24 @@ export class ContactFormComponent {
   isSpinnerVisible:boolean = false;
   isOTPFieldVisible:boolean = false;
 
-  // !contactMeForm.get(inputConfig.formControlName)?.valid &&
-  // contactMeForm.get(inputConfig.formControlName)?.touched &&
-  // contactMeForm.get('messageFormControl')?.errors?.['required']
-
-  // "!contactMeForm.get('messageFormControl')?.valid &&
-  //  contactMeForm.get('messageFormControl')?.touched &&
-  //  contactMeForm.get('messageFormControl')?.errors?.['required']"
-
-
-  constructor(private _image:Images, private _sharedValidatorsService:SharedValidatorsService) {
-
+  constructor(
+    private _image:Images,
+    private _sharedValidatorsService:SharedValidatorsService,
+    private _apiService: ApiService) {
     this.contactMeForm = new FormGroup({
-
-      "emailFormControl": new FormControl(null,
+      "emailId": new FormControl(null,
         [
           Validators.required,
           Validators.email,
           this._sharedValidatorsService.noSpaceAllowed.bind(this),
 
       ]),
-      "subjectFormControl": new FormControl(null,
+      "subject": new FormControl(null,
         [
           Validators.required,
           Validators.maxLength(50),
       ]),
-      "messageFormControl": new FormControl(null,
+      "message": new FormControl(null,
         [
           Validators.required,
           Validators.maxLength(200),
@@ -54,10 +47,12 @@ export class ContactFormComponent {
   }
   generateOTP() {
     this.isSpinnerVisible = !this.isSpinnerVisible
-    setTimeout(() => {
-      this.isSpinnerVisible = !this.isSpinnerVisible;
-      this.isOTPFieldVisible =!this.isOTPFieldVisible
-     }, 3000);
+    this._apiService.generateOTP(this.contactMeForm.value).subscribe(data => {
+        this.isSpinnerVisible = !this.isSpinnerVisible;
+        this.isOTPFieldVisible =!this.isOTPFieldVisible
+      console.log("data ---", data);
+    });
+
   }
   onSubmit () {
 

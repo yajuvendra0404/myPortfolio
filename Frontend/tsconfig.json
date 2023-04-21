@@ -65,7 +65,6 @@
       "@connect/*":[
         "./app-common-module/connect/*"
       ]
-
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,

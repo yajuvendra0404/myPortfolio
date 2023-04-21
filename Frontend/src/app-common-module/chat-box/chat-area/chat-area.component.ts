@@ -1,4 +1,4 @@
-import { SharedService } from '@common-module/shared-services/shared.service';
+import { SharedService } from '@common-module/shared-services/shared-services/shared.service';
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 // import { faXmarkCircle } from '@fortawesome/free-solid-svg-icons';

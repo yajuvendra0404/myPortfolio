@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { IStrength, IStrengthAnimation } from '@home/home.interface';
 import { HomeService } from '@home/home.service';
-import { SharedService } from '@common-module/shared-services/shared.service';
+import { SharedService } from '@common-module/shared-services/shared-services/shared.service';
 import { Images } from '@assets/images';
 
 @Component({

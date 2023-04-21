@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, Renderer2, TemplateRef, ViewChild } from '@angular/core';
 import { Images } from '@assets/images';
-import { SharedService } from '@common-module/shared-services/shared.service';
+import { SharedService } from '@common-module/shared-services/shared-services/shared.service';
 import { IbannerText, ILayerStylingProps } from '@common-module/app-common-interface';
 import { IbannerStylingProp } from '@common-module/app-common-interface';
 import { Subject, Subscription } from 'rxjs';

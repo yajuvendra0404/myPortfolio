@@ -13,11 +13,11 @@ export default class Routes {
         this.routes.get(`${this.path}greet`, ( req, res, next)=>{
             _controller.testRoute(req, res, next);       
         })
-        this.routes.post(`${this.path}message`, ( req, res, next)=>{
+        this.routes.post(`${this.path}saveMessage`, ( req, res, next)=>{
             _controller.saveMessage(req, res, next);     
         })
-        this.routes.post(`${this.path}mail`,(req, res, next)=> {
-            _controller.sendmail(req, res, next);
+        this.routes.post(`${this.path}generateOTP`,(req, res, next)=> {
+            _controller.sendOTP(req, res, next);
         })
     }
 }

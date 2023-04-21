@@ -2,13 +2,17 @@
 import { autoInjectable } from "tsyringe";
 import nodemailer from 'nodemailer';
 import Config from "../configs/config.js";
+import Models from "../models/model.js";
 
 @autoInjectable()
-export class MailService {
+export class Service {
+    private generatedOTP:number;
+    constructor(
+        private _config : Config,
+        private _models : Models
+    ) {}
 
-    constructor(private _config : Config) {}
-
-    async sendMail(userMailId: string): Promise<{[key:string]:string} | string> {
+    async sendMail(mailId: string): Promise<{[key:string]:string} | string> {
         try {
             let transporter = nodemailer.createTransport({
                 host: this._config.SMTP_HOST,
@@ -20,10 +24,19 @@ export class MailService {
                 },
             });
             await transporter.sendMail({
-                from: '"m04.portfolio.04" <m04.portfolio.04@gmail.com>', 
-                to: userMailId,
+                from: '"m04.portfolio.04" <m04.portfolio.04@gmail.com>',
+                to: mailId,
                 subject: "Email Verification OTP",
                 html: this.getTemplate(),
+            }, async (error, info) => {
+                // if (error) throw new OperationCanceledException();
+                
+                let OTP = await this._models.OTP.create({
+                    "mailId":mailId, 
+                    "OTP":this.generatedOTP,
+                    "expiresAt": new Date(Date.now() + 2*60)
+                });
+
             });
             return {'message':'Verification OTP Send'};  
             
@@ -32,13 +45,17 @@ export class MailService {
             // return {"error":"Unable To Send Verification OTP."}
         }
     }
-
+    async saveMessage (data: Request): Promise<{[key:string]:string}> {
+        await this._models.Message.create({...data,isVerified:true});  
+        return { message: "Data Saved"};
+    }
     private getTemplate(): string {
-        let OTP = (Math.random()*1000000).toFixed(0);
+        this.generatedOTP = parseInt((Math.random()*1000000).toFixed(0));
+
         let template:string ="";
 
         template += "<html>"; 
-        template += "Verification OTP - "+ OTP ;
+        template += "Verification OTP - "+ this.generatedOTP ;
         template += "<br> Thank you.";
         template += "</html>";
 
