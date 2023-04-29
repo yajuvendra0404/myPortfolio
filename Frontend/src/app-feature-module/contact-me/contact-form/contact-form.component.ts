@@ -4,6 +4,7 @@ import { Images } from '@assets/images';
 import { IContactForm } from './contact-form.interface';
 import { SharedValidatorsService } from '@common-module/shared-services/validator-services/shared-validators.service';
 import { ApiService } from '@common-module/shared-services/api-services/api.service';
+import { Subscription } from 'rxjs';
 // import { DEFAULT_MESSAGES, MESSAGE_KEYS } from '@common-module/enums/errorMsg';
 
 @Component({
@@ -12,6 +13,7 @@ import { ApiService } from '@common-module/shared-services/api-services/api.serv
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
+  subscriptionStore: Subscription[] = [];
   contactMeForm: FormGroup;
   errorMessage: string ="some random error occured";
   emailError: boolean = false;
@@ -19,6 +21,7 @@ export class ContactFormComponent {
   messageError: boolean = false;
   isSpinnerVisible:boolean = false;
   isOTPFieldVisible:boolean = false;
+  timer: number = 60;
 
   constructor(
     private _image:Images,
@@ -46,17 +49,24 @@ export class ContactFormComponent {
     })
   }
   generateOTP() {
-    this.isSpinnerVisible = !this.isSpinnerVisible
-    this._apiService.generateOTP(this.contactMeForm.value).subscribe(data => {
+    this.isSpinnerVisible = !this.isSpinnerVisible;
+    this.subscriptionStore.push(
+      this._apiService.generateOTP(this.contactMeForm.value).subscribe(data => {
         this.isSpinnerVisible = !this.isSpinnerVisible;
-        this.isOTPFieldVisible =!this.isOTPFieldVisible
-      console.log("data ---", data);
-    });
+        this.isOTPFieldVisible =!this.isOTPFieldVisible;
+        var x = setInterval(()=> {
 
-  }
-  onSubmit () {
+          this.timer = this.timer - 1;
+          if(this.timer === 0){
+            clearInterval(x);
+          }
+        },1000);
 
+      })
+    );
   }
+  onSubmit () {}
+
   ngAfterViewInit() {
     // this.contactMeForm.valueChanges.subscribe( data => {
     // Object.keys(data).forEach(key =>{
@@ -72,6 +82,12 @@ export class ContactFormComponent {
     //   }
     //   })
     // })
+  }
+
+  ngDestroy () {
+    this.subscriptionStore.forEach((ele)=> {
+      ele.unsubscribe();
+    })
   }
 
 }

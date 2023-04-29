@@ -32,8 +32,6 @@ export default class InitializeApp{
     this.app.use(morgan('tiny'));
     this.app.use(cors()); 
     this.app.use(express.json());
-
-
     // ------ init functions initialization
     this.initalizeDatabase();
     this.initializeRouter();
@@ -45,8 +43,8 @@ export default class InitializeApp{
 
   initalizeDatabase () {
     mongoose.connect("mongodb"+this.MONGODB_CONNECTION_STRING).then(()=>{
-      console.log(`---------- Database connection established`);
       this.listen();
+      console.log(`---------- Database connection established`);
     }).catch( err => {
       console.log(`---------- Database connection error -----`,err)
     });
@@ -55,7 +53,6 @@ export default class InitializeApp{
   listen(){
     this.app.listen(this.PORT, () => {
       return console.log(`
-
       ---------------------------------------------
       ---------------------------------------------
       Express is listening at http://localhost:${this.PORT}

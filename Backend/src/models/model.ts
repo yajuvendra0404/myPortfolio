@@ -12,7 +12,7 @@ export default class Models {
     OTP = mongoose.model ("OTP", new mongoose.Schema({
         mailId:{ type:String, required: true, trim: true },
         OTP:{ type:Number, trim:true, required:true},
-        expiresAt: { type: Date, required: true, index: true, expires:'2m'},  
+        expiresAt: { type: Date, required: true, index: true, expires:'1m'},  
     }))
     
 }

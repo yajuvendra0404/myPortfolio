@@ -7,12 +7,13 @@ import Models from "../models/model.js";
 @autoInjectable()
 export class Service {
     private generatedOTP:number;
+    
     constructor(
         private _config : Config,
         private _models : Models
     ) {}
 
-    async sendMail(mailId: string): Promise<{[key:string]:string} | string> {
+    async sendMail(mailId: string): Promise<{[key:string]:string} > {
         try {
             let transporter = nodemailer.createTransport({
                 host: this._config.SMTP_HOST,
@@ -29,25 +30,29 @@ export class Service {
                 subject: "Email Verification OTP",
                 html: this.getTemplate(),
             }, async (error, info) => {
-                // if (error) throw new OperationCanceledException();
+                if (error) throw ("Error occured verification OTP was not Send.");
                 
                 let OTP = await this._models.OTP.create({
                     "mailId":mailId, 
                     "OTP":this.generatedOTP,
-                    "expiresAt": new Date(Date.now() + 2*60)
+                    "expiresAt": new Date(Date.now() + 60)
                 });
 
             });
             return {'message':'Verification OTP Send'};  
             
         } catch (exp) {
-            throw new Error("Verification OTP was not Send");
-            // return {"error":"Unable To Send Verification OTP."}
+            return {"error":exp};
         }
     }
-    async saveMessage (data: Request): Promise<{[key:string]:string}> {
-        await this._models.Message.create({...data,isVerified:true});  
-        return { message: "Data Saved"};
+    async saveMessage (data: Request): Promise<{[key:string]:string | string}> {
+        try{
+            await this._models.Message.create({...data,isVerified:true});  
+            return { message: "Data Saved"};
+        } catch (exp) {
+            return { error: exp};
+        }
+
     }
     private getTemplate(): string {
         this.generatedOTP = parseInt((Math.random()*1000000).toFixed(0));
@@ -55,8 +60,10 @@ export class Service {
         let template:string ="";
 
         template += "<html>"; 
+        template += "Dear User, <br><br>" ;
         template += "Verification OTP - "+ this.generatedOTP ;
-        template += "<br> Thank you.";
+        template += "<br> This OTP expires in 60 seconds.";
+        template += "<br><br> Thank you.";
         template += "</html>";
 
         return template;

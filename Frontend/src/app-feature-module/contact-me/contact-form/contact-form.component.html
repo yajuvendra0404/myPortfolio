@@ -67,7 +67,8 @@
         </div>
 
         <div class="form-group mt-3 row" *ngIf="isOTPFieldVisible">
-          <div class="col-sm-6">
+
+          <div class="col-sm-3">
             <input class="form-control form-control-sm" type="text" placeholder="Enter OTP" aria-label="Enter OTP">
           </div>
           <div class="col-sm-2">
@@ -76,6 +77,12 @@
           <div class="col-sm-2">
             <button type="submit" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" title="Regenrate OTP"> <i class="bi bi-arrow-clockwise"></i> </button>
           </div>
+
+          <div class="col-sm-5 ">
+            <small *ngIf="timer !== 0 ">Expires in {{ timer }} seconds.</small>
+            <small *ngIf="timer === 0 ">OTP expired, regenerate OTP.</small>
+          </div>
+
         </div>
       </form>
     </div>

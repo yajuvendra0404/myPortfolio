@@ -5,16 +5,12 @@
     "outDir": "./dist/out-tsc",
     "paths": {
 
-      // "@/*": [
-      //   "*"
-      // ],
       "@app/*": [
         "./app/*"
       ],
       "@assets/*": [
         "./app-core/assets-service/*"
       ],
-
 
       /// ------ Feature Module Paths --------///
       "@feature-module":[
@@ -32,7 +28,6 @@
       "@project/*": [
         "app-feature-module/project/*"
       ],
-
 
       /// ------ Common Module Paths --------///
       "@common-module/*":[
