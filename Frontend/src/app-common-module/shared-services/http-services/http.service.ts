@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, catchError } from 'rxjs';
+import { environment } from 'environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-  private baseURL: string= "http://localhost:3110/";
+  private baseURL: string= environment.DOMAIN;
   constructor(private _http: HttpClient) {}
 
   sendFetchRequest(url: string): Observable<any> {

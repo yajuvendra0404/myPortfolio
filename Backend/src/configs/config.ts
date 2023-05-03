@@ -12,7 +12,7 @@ export default class Config{
     
     constructor() {
         config({path:`./src/env/${process.env.NODE_ENV}.env`});
-        this.MONGODB_CONNECTION_STRING = process.env.MONGO_DB_CONNECTION_STRING_LOCAL;
+        this.MONGODB_CONNECTION_STRING = process.env.MONGO_DB_CONNECTION_STRING;
         this.PORT = process.env.PORT;
         this.SECRET_KEY= process.env.SECRET_KEY;
         this.SMTP_HOST= process.env.SMTP_HOST;

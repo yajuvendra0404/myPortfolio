@@ -57,7 +57,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "sourceMap": true,
-    "outDir": "./dist/app",
+    "outDir": "./dist",
     "moduleResolution": "node",
     "removeComments": true,
     "noImplicitAny": true,

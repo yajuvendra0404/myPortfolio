@@ -19,7 +19,7 @@ export default class InitializeApp{
       _config:Config,
       _routes:Routes
   ){
-
+    console.log("-config",_config);
     // ------ config variable initialization
     this.MONGODB_CONNECTION_STRING = _config.MONGODB_CONNECTION_STRING;
     this.PORT = _config.PORT;

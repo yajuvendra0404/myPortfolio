@@ -14,10 +14,10 @@
         },
         "mangle": false
       },
-      "target": "es2018",
+      "target": "esnext",
       "baseUrl": "./"
     },
     "module": {
-      "type": "commonjs"
+      "type": "nodenext"
     }
   }
