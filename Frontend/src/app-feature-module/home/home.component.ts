@@ -3,6 +3,7 @@ import { IStrength, IStrengthAnimation } from '@home/home.interface';
 import { HomeService } from '@home/home.service';
 import { SharedService } from '@common-module/shared-services/shared-services/shared.service';
 import { Images } from '@assets/images';
+import { Docs } from '@assets/docs';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +17,8 @@ export class HomeComponent implements OnInit{
   constructor(
     private _homeService: HomeService,
     private _sharedService: SharedService,
-    private _images:Images
+    private _images:Images,
+    public _doc: Docs
   ) {
     this.strength = this._homeService.getStrengths();
   }

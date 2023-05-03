@@ -6,9 +6,15 @@ import { AppCommonModule } from '@common-module/app-common-module';
 
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PetProjectsComponent } from './pet-projects/pet-projects.component';
+import { CertAndAchieveComponent } from './cert-and-achieve/cert-and-achieve.component';
+import { ProfessionalProjectComponent } from './professional-project/professional-project.component';
 @NgModule({
   declarations: [
-    ProjectComponent
+    ProjectComponent,
+    PetProjectsComponent,
+    CertAndAchieveComponent,
+    ProfessionalProjectComponent
   ],
   imports: [
     CommonModule,
