@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Images } from '@assets/images';
 import { Docs } from '@assets/docs';
 import { Urls } from '@assets/urls';
+
 @Component({
   selector: 'app-cert-and-achieve',
   templateUrl: './cert-and-achieve.component.html',
   styleUrls: ['./cert-and-achieve.component.scss']
 })
+
 export class CertAndAchieveComponent {
 
   content: {href: string, imageSrc: string}[] =[];
@@ -17,11 +19,11 @@ export class CertAndAchieveComponent {
   ){
     this.content = [
       {
-        href: _urls.jcp1,
+        href: _docs.acedemicAward,
         imageSrc:_images.conestoga
       },
       {
-        href:_urls.jcp2,
+        href:_urls.credly,
         imageSrc:_images.az900
       },
 
