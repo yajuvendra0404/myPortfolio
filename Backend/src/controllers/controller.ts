@@ -6,11 +6,11 @@
     better to use updateOne() over save() because of atomicity 
 */
 
-import { autoInjectable } from "tsyringe";
+import { autoInjectable, injectable } from "tsyringe";
 import { NextFunction,Request, Response } from "express";
 import { Service } from "../services/service.js";
 
-@autoInjectable()
+@injectable()
 export default class Controller {
     
     constructor ( 

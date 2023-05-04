@@ -1,10 +1,10 @@
 
-import { autoInjectable } from "tsyringe";
+import { autoInjectable, injectable } from "tsyringe";
 import nodemailer from 'nodemailer';
 import Config from "../configs/config.js";
 import Models from "../models/model.js";
 
-@autoInjectable()
+@injectable()
 export class Service {
     private generatedOTP:number;
     

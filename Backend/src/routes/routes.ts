@@ -1,8 +1,8 @@
 import Controller from "../controllers/controller.js";
 import { Router } from "express";
-import { autoInjectable } from "tsyringe";
+import { autoInjectable, injectable } from "tsyringe";
 
-@autoInjectable()
+@injectable()
 export default class Routes {
     path:string ="/"
     routes = Router();

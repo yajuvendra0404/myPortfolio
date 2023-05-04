@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
-
+import { autoInjectable, injectable } from 'tsyringe';
+@injectable()
 export default class Models {
     
     Message = mongoose.model("message", new mongoose.Schema({

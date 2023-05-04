@@ -1,5 +1,7 @@
 import { config } from 'dotenv';
+import { autoInjectable, injectable } from 'tsyringe';
 
+@injectable()
 export default class Config{
     
     SECRET_KEY?:string;
