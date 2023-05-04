@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "swc src -d dist",
-    "build:prod":"npm install && npm run build",
+    "build:prod":"npm install && npm install -g cross-env && npm run build",
     "start:prod": "cross-env NODE_ENV=production node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "ts-node src/app.ts",
