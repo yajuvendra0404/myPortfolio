@@ -18,6 +18,6 @@
       "baseUrl": "./"
     },
     "module": {
-      "type": "nodenext"
+      "type": "es6"
     }
   }

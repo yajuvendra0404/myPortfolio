@@ -2,36 +2,34 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { autoInjectable, injectable} from "tsyringe";
+import { autoInjectable, inject, injectable } from "tsyringe";
 import Config from "../configs/config.js";
 import Routes from '../routes/routes.js';
 
 @injectable()
-export default class InitializeApp{
+export class InitializeApp{
 
    private app:express.Application;
-   private MONGODB_CONNECTION_STRING?:string;
-   private PORT?:string;
-   private SECRET_KEY?:string;
+   private MONGODB_CONNECTION_STRING:string;
+   private PORT:string;
    private routes: express.IRouter;
 
   constructor(
-      _config:Config,
-      _routes:Routes
+    private _config:Config,
+    private _routes:Routes
   ){
     console.log("--- config ---",_config);
     // ------ config variable initialization
-    this.MONGODB_CONNECTION_STRING = _config.MONGODB_CONNECTION_STRING;
-    this.PORT = _config.PORT;
-    this.SECRET_KEY = _config?.SECRET_KEY;
+    this.MONGODB_CONNECTION_STRING = _config.MONGODB_CONNECTION_STRING || "";
+    this.PORT = _config.PORT || "";
     this.routes = _routes.routes;
-
 
     // ------ express initialization
     this.app = express();
     this.app.use(morgan('tiny'));
     this.app.use(cors()); 
     this.app.use(express.json());
+
     // ------ init functions initialization
     this.initalizeDatabase();
     this.initializeRouter();

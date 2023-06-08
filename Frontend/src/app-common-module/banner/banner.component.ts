@@ -41,16 +41,14 @@ export class BannerComponent implements OnInit {
       })
     );
 
-
     this.subscriptionStore.push (
       this._sharedService.bannerText.subscribe((stylingProps) => {
         console.log('text Props ---', stylingProps);
         this.bannerTextStyling = stylingProps;
       })
     );
-
-
   }
+
   // url("../../../assets/images/pexels-fox-desktop.jpg") no-repeat;
 
   ngOnInit(): void {
