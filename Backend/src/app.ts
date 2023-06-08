@@ -2,7 +2,7 @@
 // **** app initializations **** //
 
 import "reflect-metadata";
-import { InitializeApp }  from "./server/initializeApp.js";
+import InitializeApp from "./server/initializeApp";
 import { InjectionToken, container, registry } from "tsyringe";
 
 registry([

@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "build": "swc src -d dist",
     "build:prod": "npm install && npm run build",

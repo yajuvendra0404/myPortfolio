@@ -1,8 +1,8 @@
 
 import { autoInjectable, injectable } from "tsyringe";
 import nodemailer from 'nodemailer';
-import Config from "../configs/config.js";
-import Models from "../models/model.js";
+import Config from "../configs/config";
+import Models from "../models/model";
 
 @injectable()
 export class Service {

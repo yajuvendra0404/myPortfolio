@@ -3,11 +3,11 @@ import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import { autoInjectable, inject, injectable } from "tsyringe";
-import Config from "../configs/config.js";
-import Routes from '../routes/routes.js';
+import Config from "../configs/config";
+import Routes from '../routes/routes';
 
 @injectable()
-export class InitializeApp{
+export default class InitializeApp{
 
    private app:express.Application;
    private MONGODB_CONNECTION_STRING:string;

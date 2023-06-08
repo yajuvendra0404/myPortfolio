@@ -8,7 +8,7 @@
 
 import { autoInjectable, injectable } from "tsyringe";
 import { NextFunction,Request, Response } from "express";
-import { Service } from "../services/service.js";
+import { Service } from "../services/service";
 
 @injectable()
 export default class Controller {
