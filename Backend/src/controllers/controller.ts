@@ -6,7 +6,7 @@
     better to use updateOne() over save() because of atomicity 
 */
 
-import { autoInjectable, injectable } from "tsyringe";
+import { injectable } from "tsyringe";
 import { NextFunction,Request, Response } from "express";
 import { Service } from "../services/service";
 
@@ -18,23 +18,24 @@ export default class Controller {
     ) {}
 
     // ------ test route.
-    testRoute(req: Request, res: Response, next: NextFunction) {
-        res.status(200).json({ title: 'Test Complete.' }); 
+    testRoute(_req: Request, _res: Response, _next: NextFunction) {
+        console.log()
+        _res.status(200).json({ title: 'Test Complete.' }); 
     }
 
     // ------ save message after OTP verification.
-    async saveMessage(req: Request, res: Response, next: NextFunction) {
+    async saveMessage(_req: Request, _res: Response, _next: NextFunction) {
         try {
-            var json = this._service.saveMessage(req.body);
-            res.status(200).json(json) 
+            var json = this._service.saveMessage(_req.body);
+            _res.status(200).json(json) 
         } catch(exp) {
             console.log("exception occured");
         }
     }
 
     // ------ send mail for OTP verification.
-    async sendOTP(req: Request, res: Response, next: NextFunction) {
-        let mailSent = await this._service.sendMail(req.body.emailId);
-        res.status(200).json(mailSent);
+    async sendOTP(_req: Request, _res: Response, _next: NextFunction) {
+        let mailSent = await this._service.sendMail(_req.body.emailId);
+        _res.status(200).json(mailSent);
     }
 }

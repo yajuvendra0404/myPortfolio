@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { autoInjectable, injectable } from 'tsyringe';
+import { injectable } from 'tsyringe';
 @injectable()
 export default class Models {
     

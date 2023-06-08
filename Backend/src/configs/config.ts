@@ -1,5 +1,5 @@
 import { config } from 'dotenv';
-import { autoInjectable, injectable } from 'tsyringe';
+import { injectable } from 'tsyringe';
 
 @injectable()
 export default class Config{

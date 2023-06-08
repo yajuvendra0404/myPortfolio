@@ -2,7 +2,7 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import mongoose from 'mongoose';
-import { autoInjectable, inject, injectable } from "tsyringe";
+import {  injectable } from "tsyringe";
 import Config from "../configs/config";
 import Routes from '../routes/routes';
 
@@ -18,11 +18,10 @@ export default class InitializeApp{
     private _config:Config,
     private _routes:Routes
   ){
-    console.log("--- config ---",_config);
     // ------ config variable initialization
-    this.MONGODB_CONNECTION_STRING = _config.MONGODB_CONNECTION_STRING || "";
-    this.PORT = _config.PORT || "";
-    this.routes = _routes.routes;
+    this.MONGODB_CONNECTION_STRING = this._config.MONGODB_CONNECTION_STRING || "";
+    this.PORT = this._config.PORT || "";
+    this.routes = this._routes.routes;
 
     // ------ express initialization
     this.app = express();

@@ -3,7 +3,7 @@
 
 import "reflect-metadata";
 import InitializeApp from "./server/initializeApp";
-import { InjectionToken, container, registry } from "tsyringe";
+import { container, registry } from "tsyringe";
 
 registry([
         {token: "InitializeApp", useClass: InitializeApp}, // can be any provider

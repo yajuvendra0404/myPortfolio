@@ -1,5 +1,5 @@
 
-import { autoInjectable, injectable } from "tsyringe";
+import { injectable } from "tsyringe";
 import nodemailer from 'nodemailer';
 import Config from "../configs/config";
 import Models from "../models/model";
@@ -32,12 +32,12 @@ export class Service {
             }, async (error, info) => {
                 if (error) throw ("Error occured verification OTP was not Send.");
                 
-                let OTP = await this._models.OTP.create({
+                await this._models.OTP.create({
                     "mailId":mailId, 
                     "OTP":this.generatedOTP,
                     "expiresAt": new Date(Date.now() + 60)
                 });
-
+                console.log("---mailer - info---",info)
             });
             return {'message':'Verification OTP Send'};  
             
