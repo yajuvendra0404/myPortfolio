@@ -21,7 +21,6 @@
               <p *ngIf="contactMeForm.get('emailId')?.errors?.['required']"><small> This field is required. </small></p>
               <p *ngIf="contactMeForm.get('emailId')?.errors?.['email']"><small> Invalid email address. </small></p>
           </span>
-
           <div class="form-group mt-3">
             <input
               type="text"
@@ -54,8 +53,6 @@
             <p *ngIf="contactMeForm.get('message')?.errors?.['maxlength']"><small> Max length is 200 characters. </small></p>
           </span>
         <hr>
-
-
         <div class="form-group mt-3 " *ngIf="!isSpinnerVisible && !isOTPFieldVisible">
           <button type="button" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" (click)="generateOTP()">Verify Email</button>
         </div>
@@ -65,17 +62,20 @@
             <span class="text-white">Verifying...</span>
           </button>
         </div>
-
         <div class="form-group mt-3 row" *ngIf="isOTPFieldVisible">
 
           <div class="col-sm-3">
-            <input class="form-control form-control-sm" type="text" placeholder="Enter OTP" aria-label="Enter OTP">
+            <input class="form-control form-control-sm"
+              formControlName="otp"
+              type="text"
+              placeholder="Enter OTP"
+              aria-label="Enter OTP">
           </div>
           <div class="col-sm-2">
-            <button type="submit" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid">Submit</button>
+            <button type="submit" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" >Submit</button>
           </div>
           <div class="col-sm-2">
-            <button type="submit" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" title="Regenrate OTP"> <i class="bi bi-arrow-clockwise"></i> </button>
+            <button type="button" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" (click)="generateOTP()" title="Regenrate OTP"> <i class="bi bi-arrow-clockwise"></i> </button>
           </div>
 
           <div class="col-sm-5 ">

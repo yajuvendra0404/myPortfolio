@@ -24,9 +24,9 @@ export default class Controller {
     }
 
     // ------ save message after OTP verification.
-    async saveMessage(_req: Request, _res: Response, _next: NextFunction) {
+    async submitMessage(_req: Request, _res: Response, _next: NextFunction) {
         try {
-            var json = this._service.saveMessage(_req.body);
+            var json = this._service.submitMessage(_req.body);
             _res.status(200).json(json) 
         } catch(exp) {
             console.log("exception occured");
@@ -34,7 +34,7 @@ export default class Controller {
     }
 
     // ------ send mail for OTP verification.
-    async sendOTP(_req: Request, _res: Response, _next: NextFunction) {
+    async generateOTP(_req: Request, _res: Response, _next: NextFunction) {
         let mailSent = await this._service.sendMail(_req.body.emailId);
         _res.status(200).json(mailSent);
     }

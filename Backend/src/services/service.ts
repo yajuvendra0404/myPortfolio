@@ -45,9 +45,13 @@ export class Service {
             return {"error":exp};
         }
     }
-    async saveMessage (data: Request): Promise<{[key:string]:string | string}> {
+    async submitMessage (_body: any): Promise<{[key:string]:string | string}> {
+
         try{
-            await this._models.Message.create({...data,isVerified:true});  
+            let data = await this._models.OTP.findOne({mailId: _body.emailId});
+            if(!data) return { message: "Invalid OTP."}; 
+             console.log("--- body --", _body);
+            await this._models.Message.create({..._body,isVerified:true});  
             return { message: "Data Saved"};
         } catch (exp) {
             return { error: exp};

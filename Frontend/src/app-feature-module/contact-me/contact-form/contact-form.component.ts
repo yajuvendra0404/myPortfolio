@@ -44,6 +44,10 @@ export class ContactFormComponent {
         [
           Validators.required,
           Validators.maxLength(200),
+      ]),
+      "otp": new FormControl(null,
+        [
+          Validators.maxLength(6),
       ])
 
     })
@@ -55,17 +59,21 @@ export class ContactFormComponent {
         this.isSpinnerVisible = !this.isSpinnerVisible;
         this.isOTPFieldVisible =!this.isOTPFieldVisible;
         var x = setInterval(()=> {
-
           this.timer = this.timer - 1;
           if(this.timer === 0){
             clearInterval(x);
           }
         },1000);
-
       })
     );
   }
-  onSubmit () {}
+  onSubmit () {
+    this.subscriptionStore.push(
+      this._apiService.submitMessage(this.contactMeForm.value).subscribe(data => {
+        console.log("---data saved---");
+      })
+    )
+  }
 
   ngAfterViewInit() {
     // this.contactMeForm.valueChanges.subscribe( data => {
