@@ -22,52 +22,55 @@ export class ContactFormComponent {
   isSpinnerVisible:boolean = false;
   isOTPFieldVisible:boolean = false;
   timer: number = 60;
-
+  timerInterval:any;
+  
   constructor(
     private _image:Images,
     private _sharedValidatorsService:SharedValidatorsService,
     private _apiService: ApiService) {
     this.contactMeForm = new FormGroup({
-      "emailId": new FormControl(null,
-        [
+      "emailId": new FormControl(null,[
           Validators.required,
           Validators.email,
-          this._sharedValidatorsService.noSpaceAllowed.bind(this),
-
+          this._sharedValidatorsService.noSpaceAllowed.bind(this)
       ]),
-      "subject": new FormControl(null,
-        [
+      "subject": new FormControl(null,[
           Validators.required,
-          Validators.maxLength(50),
+          Validators.maxLength(50)
       ]),
-      "message": new FormControl(null,
-        [
+      "message": new FormControl(null,[
           Validators.required,
-          Validators.maxLength(200),
+          Validators.maxLength(200)
       ]),
-      "otp": new FormControl(null,
-        [
-          Validators.maxLength(6),
+      "OTP": new FormControl(null,[
+          Validators.maxLength(6)
       ])
-
     })
   }
   generateOTP() {
+    this.resetOTPTimer();
     this.isSpinnerVisible = !this.isSpinnerVisible;
     this.subscriptionStore.push(
       this._apiService.generateOTP(this.contactMeForm.value).subscribe(data => {
         this.isSpinnerVisible = !this.isSpinnerVisible;
         this.isOTPFieldVisible =!this.isOTPFieldVisible;
-        var x = setInterval(()=> {
+         this.timerInterval= setInterval(()=> {
           this.timer = this.timer - 1;
           if(this.timer === 0){
-            clearInterval(x);
+            clearInterval(this.timerInterval);
           }
         },1000);
       })
     );
   }
+  resetOTPTimer() {
+    clearInterval(this.timerInterval);
+    this.timer = 60;
+    this.contactMeForm.get('OTP')?.setValue(null);
+  }
+
   onSubmit () {
+    this.contactMeForm.value.OTP = parseInt(this.contactMeForm.value.OTP);
     this.subscriptionStore.push(
       this._apiService.submitMessage(this.contactMeForm.value).subscribe(data => {
         console.log("---data saved---");

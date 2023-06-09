@@ -14,6 +14,7 @@ export class ApiService {
     return this._httpService.sendPostRequest("generateOTP",formData);
   }
   submitMessage( formData: IContactFormData ): Observable<{[key:string]:string}>{
+    console.log("--formdata --",formData);
     return this._httpService.sendPostRequest("submitMessage", formData);
   }
 

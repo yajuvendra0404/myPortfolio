@@ -13,7 +13,7 @@ export class Service {
         private _models : Models
     ) {}
 
-    async sendMail(mailId: string): Promise<{[key:string]:string} > {
+    async sendMail(emailId: string): Promise<{[key:string]:string} > {
         try {
             let transporter = nodemailer.createTransport({
                 host: this._config.SMTP_HOST,
@@ -26,14 +26,14 @@ export class Service {
             });
             await transporter.sendMail({
                 from: '"m04.portfolio.04" <m04.portfolio.04@gmail.com>',
-                to: mailId,
+                to: emailId,
                 subject: "Email Verification OTP",
                 html: this.getTemplate(),
             }, async (error, info) => {
                 if (error) throw ("Error occured verification OTP was not Send.");
                 
                 await this._models.OTP.create({
-                    "mailId":mailId, 
+                    "emailId":emailId, 
                     "OTP":this.generatedOTP,
                     "expiresAt": new Date(Date.now() + 60)
                 });
@@ -48,9 +48,8 @@ export class Service {
     async submitMessage (_body: any): Promise<{[key:string]:string | string}> {
 
         try{
-            let data = await this._models.OTP.findOne({mailId: _body.emailId});
-            if(!data) return { message: "Invalid OTP."}; 
-             console.log("--- body --", _body);
+            let data = await this._models.OTP.findOne({emailId: _body.emailId});
+            if( data?.OTP != _body.OTP ) return { message: "Invalid OTP."}; 
             await this._models.Message.create({..._body,isVerified:true});  
             return { message: "Data Saved"};
         } catch (exp) {
