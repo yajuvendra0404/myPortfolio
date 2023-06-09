@@ -10,11 +10,9 @@ registry([
 ])
 
 const startApp = () => {
-
     console.log("-----app starting -------------");
     container.resolve<InitializeApp>(InitializeApp);
     console.log("-----app started -------------");
-
 }
 
 startApp()

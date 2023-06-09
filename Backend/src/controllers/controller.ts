@@ -26,8 +26,7 @@ export default class Controller {
     // ------ save message after OTP verification.
     async submitMessage(_req: Request, _res: Response, _next: NextFunction) {
         try {
-            var json = this._service.submitMessage(_req.body);
-            console.log("----Json res---",json)
+            var json = await this._service.submitMessage(_req.body);
             _res.status(200).json(json) 
         } catch(exp) {
             console.log("exception occured");

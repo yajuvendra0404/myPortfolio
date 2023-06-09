@@ -13,6 +13,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./contact-form.component.scss']
 })
 export class ContactFormComponent {
+
   subscriptionStore: Subscription[] = [];
   contactMeForm: FormGroup;
   errorMessage: string ="some random error occured";
@@ -23,7 +24,7 @@ export class ContactFormComponent {
   isOTPFieldVisible:boolean = false;
   timer: number = 60;
   timerInterval:any;
-  
+
   constructor(
     private _image:Images,
     private _sharedValidatorsService:SharedValidatorsService,
@@ -49,11 +50,11 @@ export class ContactFormComponent {
   }
   generateOTP() {
     this.resetOTPTimer();
-    this.isSpinnerVisible = !this.isSpinnerVisible;
+    this.isSpinnerVisible = true;
     this.subscriptionStore.push(
       this._apiService.generateOTP(this.contactMeForm.value).subscribe(data => {
-        this.isSpinnerVisible = !this.isSpinnerVisible;
-        this.isOTPFieldVisible =!this.isOTPFieldVisible;
+        this.isSpinnerVisible = false;
+        this.isOTPFieldVisible = true;
          this.timerInterval= setInterval(()=> {
           this.timer = this.timer - 1;
           if(this.timer === 0){
@@ -73,7 +74,9 @@ export class ContactFormComponent {
     this.contactMeForm.value.OTP = parseInt(this.contactMeForm.value.OTP);
     this.subscriptionStore.push(
       this._apiService.submitMessage(this.contactMeForm.value).subscribe(data => {
-        console.log("---data saved---");
+        this.isOTPFieldVisible = false;
+        this.resetOTPTimer();
+        this.contactMeForm.reset();
       })
     )
   }

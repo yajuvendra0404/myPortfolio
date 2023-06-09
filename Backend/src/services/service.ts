@@ -15,6 +15,7 @@ export class Service {
 
     async sendMail(emailId: string): Promise<{[key:string]:string} > {
         try {
+            if( !emailId ) return { message: "Please Enter A Valid Email Id."}; 
             let transporter = nodemailer.createTransport({
                 host: this._config.SMTP_HOST,
                 port: 587,
@@ -45,13 +46,20 @@ export class Service {
             return {"error":exp};
         }
     }
-    async submitMessage (_body: any): Promise<{[key:string]:string | string}> {
+    async submitMessage (_body: any): Promise<{[key:string]:string }> {
 
         try{
+            if( !_body.emailId ) return { message: "Please Enter A Valid Email Id."}; 
+            if( !_body.message ) return { message: "Please Enter Message."}; 
+            if( !_body.subject ) return { message: "Please Enter Subject."}; 
+            if( !_body.OTP ) return { message: "Please Enter OTP."};
+
             let data = await this._models.OTP.findOne({emailId: _body.emailId});
             if( data?.OTP != _body.OTP ) return { message: "Invalid OTP."}; 
+
             await this._models.Message.create({..._body,isVerified:true});  
-            return { message: "Data Saved"};
+            return { message: "Message has been delivered."};
+            
         } catch (exp) {
             return { error: exp};
         }
