@@ -62,8 +62,7 @@
             <span class="text-white">Sending OTP...</span>
           </button>
         </div>
-        <div class="form-group mt-3 row" >
-          <!-- *ngIf="isOTPFieldVisible" -->
+        <div class="form-group mt-3 row" *ngIf="isOTPFieldVisible" >
           <div class="col-6 col-md-7">
             <input class="form-control form-control-sm"
               formControlName="OTP"
@@ -72,11 +71,10 @@
               aria-label="Enter OTP">
           </div>
           <div class="col-3 col-md-2">
-            <button type="submit" class="btn btn-dark btn-sm" >Send</button>
+            <button type="submit" class="btn btn-dark btn-sm" [disabled]="!contactMeForm.valid" >Send</button>
           </div>
-          <!-- [disabled]="!contactMeForm.valid" -->
           <div class="col-3">
-            <button type="button" class="btn btn-dark btn-sm"  (click)="generateOTP()" title="Regenrate OTP"> <i class="bi bi-arrow-clockwise"></i> </button>
+            <button type="button" class="btn btn-dark btn-sm"  [disabled]="!contactMeForm.valid" (click)="generateOTP()" title="Regenrate OTP"> <i class="bi bi-arrow-clockwise"></i> </button>
           </div>
 
           <div class="col-sm-5 ">
