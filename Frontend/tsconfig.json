@@ -28,6 +28,9 @@
       "@project/*": [
         "app-feature-module/project/*"
       ],
+      "@adminPanel/*": [
+        "app-feature-module/admin-panel/*"
+      ],
 
       /// ------ Common Module Paths --------///
       "@common-module/*":[

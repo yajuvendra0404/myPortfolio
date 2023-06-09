@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:"aboutMe", loadChildren:() => import("@aboutMe/about-me.module").then( m => m.AboutMeModule)},
   {path:"contactMe", loadChildren:() => import("@contactMe/contact-me.module").then( m => m.ContactMeModule)},
   {path:"portfolio", loadChildren:() => import("@project/project.module").then(m => m.ProjectModule)},
+  {path:"admin", loadChildren:()=> import("@adminPanel/admin-panel.module").then(m => m.AdminPanelModule)},
   {path:"notFound",  loadChildren:() => import("@common-module/app-common-module").then(m => m.AppCommonModule)},
   {path:"**",redirectTo:"/notFound"},
 
