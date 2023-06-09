@@ -30,5 +30,6 @@ export class Icons {
   jquery: string =`${this.PATH}icons-jquery.png`;
   nodejs: string = `${this.PATH}icons-node-js.png`;
   html:string = `${this.PATH}icons-html.png`;
+  spring:string = `${this.PATH}icons-spring-boot.png`;
 
 }

@@ -31,6 +31,7 @@ export class HomeService {
       new SkillsModel(9,'MongoDB', 55, "rgba(100,80,56)" , "url(" + icons.mongoDB + ") no-repeat" ),
       new SkillsModel(10,'MySql', 65, "rgba(248,124,64)" , "url(" + icons.mysql + ") no-repeat" ),
       new SkillsModel(10,'Html', 65, "rgba(188,187,252)" , "url(" + icons.html + ") no-repeat" ),
+      new SkillsModel(10,'Spring', 68, "RGB(10, 80, 80)" , "url(" + icons.spring + ") no-repeat" ),
     ]
   }
 
